@@ -1,0 +1,45 @@
+.nav-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 80px;
+    border-right: 1px solid #e6e6e6;
+    left: 0;
+    position: fixed;
+    justify-content: space-between;
+}
+.nav-logo{
+    display: flex;
+    margin-top: 30px;
+}
+
+.nav-logo img {
+    width: 40px;
+    height: auto;
+}
+.nav-icon{
+    border-bottom: 1px solid #e6e6e6 ;
+}
+.nav-icon .icon {
+    width: 25px;
+    height: auto;
+    margin-bottom: 40px;
+    scale: 130%
+}
+.nav-post {
+    margin-top: 30px;
+    scale: 130%;
+}
+
+.profile-button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.profile-button{
+    margin-bottom: 30px;
+    scale: 130%;
+    cursor: pointer;
+}
