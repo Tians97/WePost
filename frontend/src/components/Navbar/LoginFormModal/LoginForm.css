@@ -46,3 +46,9 @@ input{
     font-family: Helvetica, Arial, sans-serif;
     cursor: pointer;
 }
+
+.change-form span{
+    color:#1b8917;
+    font-weight: bold;
+    cursor: pointer;
+}

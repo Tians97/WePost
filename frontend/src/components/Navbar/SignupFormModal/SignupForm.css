@@ -6,8 +6,8 @@
 .signup-title {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
 
 .signup-content li {
@@ -20,7 +20,18 @@ input{
     background: transparent;
     border: none;
     border-bottom: 1px solid #000000;
+    padding-top:10px;
 }
+
+input[type="text"] {
+    font-size: 20px;
+}
+
+input[type="password"]{
+    font-size: 20px;
+}
+
+
 
 .signup-button {
     border-radius: 25px;
@@ -31,5 +42,11 @@ input{
     padding-top: 5px;
     padding-bottom: 5px;
     font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+.change-form span {
+    color: #1b8917;
+    font-weight: bold;
     cursor: pointer;
 }

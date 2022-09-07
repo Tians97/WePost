@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
 import './SignupForm.css';
 
-function SignupForm() {
+function SignupForm({ setShowSignup, setShowLogin }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
@@ -35,6 +35,12 @@ function SignupForm() {
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setShowSignup(false);
+    setShowLogin(true)
+  }
 
   return (
     <div className="signup-modal">
@@ -97,7 +103,13 @@ function SignupForm() {
           </li>
           <br /><br />
           <li>
-            <div className="signup-button" type="submit">Sign Up</div>
+            <div onClick={handleSubmit} className="signup-button" type="submit">Sign Up</div>
+          </li>
+          <br /><br />
+          <li>
+            <div className="change-form">
+              Already have an account? <span onClick={handleClick}>Sign in</span>
+            </div>
           </li>
         </div>
       </form>

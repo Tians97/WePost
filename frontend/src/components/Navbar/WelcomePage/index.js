@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Welcome.css"
 import LoginFormModal from '../LoginFormModal'
@@ -6,6 +6,8 @@ import SignupFormModal from '../SignupFormModal'
 
 
 export default function WelcomePage() {
+    const [showLogin, setShowLogin] = useState(false)
+    const [showSignup, setShowSignup] = useState(false)
     return (
         <div className='welcome'>
             <header>
@@ -20,8 +22,8 @@ export default function WelcomePage() {
                         <h4>Our story</h4>
                         <h4>Membership</h4>
                         <h4>Write</h4>
-                        <h4><LoginFormModal /></h4>
-                        <h4 className='get-start'><SignupFormModal /></h4>
+                        <h4><LoginFormModal showLogin = {showLogin} setShowLogin = {setShowLogin} setShowSignup = {setShowSignup}/></h4>
+                        <h4 className='get-start'><SignupFormModal showSignup= {showSignup} setShowSignup = {setShowSignup} setShowLogin = {setShowLogin}/></h4>
                     </div>
                 </div>
             </header>

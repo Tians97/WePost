@@ -60,11 +60,18 @@ img {
 }
 
 .second-header-left{
-    padding:100px
+    padding:90px
 }
 
 .second-header-title{
     font-size: 100px;
+    font-family: Bradley Hand
+}
+
+.second-header-content{
+    padding-right: 100px;
+    font-family: Venus;
+    font-weight: lighter;
 }
 
 .W{

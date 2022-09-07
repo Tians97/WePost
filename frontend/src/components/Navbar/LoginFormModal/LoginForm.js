@@ -3,7 +3,7 @@ import * as sessionActions from "../../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 
-function LoginForm() {
+function LoginForm({setShowLogin, setShowSignup}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
@@ -32,10 +32,16 @@ function LoginForm() {
     dispatch(sessionActions.login({ credential: "Demo", password: "password" }))
   }
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    setShowLogin(false);
+    setShowSignup(true);
+  }
+
   return (
     <div className="login-modal">
       <h1 className="login-title">Welcome Back.</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
@@ -67,14 +73,22 @@ function LoginForm() {
           </li>
           <br /><br />
           <li>
-            <div className="signin-button" type="submit">Sign In</div>
+            <div onClick={handleSubmit} className="signin-button" type="submit">Sign In</div>
           </li>
           <br /><br />
           <li>
             <div className="demouser" onClick={demoUser}>Demo User</div>
           </li>
+          <br /><br />
+          <li>
+            <div className="change-form">
+              No account? <span onClick={handleClick}>Create one</span>
+            </div>
+          </li>
         </div>
+        
       </form>
+      
     </div>
   );
 }
