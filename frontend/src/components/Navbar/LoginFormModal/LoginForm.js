@@ -29,7 +29,7 @@ function LoginForm({setShowLogin, setShowSignup}) {
 
   const demoUser = (e) => {
     e.preventDefault()
-    dispatch(sessionActions.login({ credential: "Demo", password: "password" }))
+    dispatch(sessionActions.login({ credential: "Tians", password: "password" }))
   }
 
   const handleClick = (e) => {
