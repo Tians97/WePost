@@ -1,0 +1,44 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fec118;
+    border-bottom: 1px solid #000;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 200px
+}
+
+
+
+.navbar-right{
+    display: flex;
+    text-align: center;
+    list-style: none;
+    cursor: pointer
+}
+
+
+.navbar-right h4{
+    margin-left:20px;
+    padding:5px;
+    font-weight: 100;
+    font-size: medium;
+    cursor: pointer
+}
+
+.get-start {
+    border-radius: 25px;
+    background-color: #191919;
+    color: #f6f6f6;
+}
+
+img {
+    width: 35px;
+    height: 20px;
+}

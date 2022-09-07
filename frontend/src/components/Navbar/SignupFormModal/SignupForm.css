@@ -1,0 +1,35 @@
+.signup-modal {
+    width: 700px;
+    height: 600px;
+}
+
+.signup-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.signup-content li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.signup-button {
+    border-radius: 25px;
+    background-color: #191919;
+    color: #f6f6f6;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
