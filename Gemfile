@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
@@ -20,16 +21,17 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem "bcrypt"
 gem "jbuilder"
+gem "faker"
+gem "pry-rails"
 
 
 group :development, :test do
   gem "byebug", platforms: %i[ mri mingw x64_mingw ]
-  gem "faker"
+  
 end
 
 group :development do
   gem "annotate"
-  gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
 end
