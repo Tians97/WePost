@@ -41,4 +41,5 @@
 .profile-button{
     margin-bottom: 30px;
     scale: 130%;
+    cursor: pointer;
 }
