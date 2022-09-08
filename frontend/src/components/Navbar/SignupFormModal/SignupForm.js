@@ -46,7 +46,7 @@ function SignupForm({ setShowSignup, setShowLogin }) {
     <div className="signup-modal">
       <h1 className="signup-title">Join WePost.</h1>
       <form onSubmit={handleSubmit}>
-        <ul>
+        <ul className="errors">
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <div className="signup-content">

@@ -1,6 +1,7 @@
 .welcome{
     margin: -10px;
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -12,14 +13,17 @@ header {
 .navbar {
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
-    padding-left: 150px;
-    padding-right: 150px;
-    position: sticky;
-    
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 200px
 }
 
 
+
+img {
+    width: 35px;
+    height: 20px;
+}
 
 
 .navbar-right {
@@ -55,15 +59,13 @@ img {
     justify-content: space-between;
 }
 
-.second-header-title{
-    margin-top: 0;
-}
 
 .second-header-left{
     padding:90px
 }
 
 .second-header-title{
+    margin-top: 0;
     font-size: 100px;
     font-family: Bradley Hand
 }

@@ -42,7 +42,7 @@ function LoginForm({setShowLogin, setShowSignup}) {
     <div className="login-modal">
       <h1 className="login-title">Welcome Back.</h1>
       <form>
-        <ul>
+        <ul className="errors">
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
         <div className="login-content">

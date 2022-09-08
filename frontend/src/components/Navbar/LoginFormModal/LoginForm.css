@@ -16,6 +16,11 @@
     justify-content: center;
 }
 
+.errors{
+    margin-left: 175 px;
+    color:red;
+}
+
 input{
     background: transparent;
     border: none;

@@ -23,6 +23,5 @@ ApplicationRecord.transaction do
         password: 'password'
     )
     
-
     puts "Done!"
 end

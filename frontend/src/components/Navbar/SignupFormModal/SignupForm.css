@@ -1,6 +1,6 @@
 .signup-modal {
     width: 700px;
-    height: 600px;
+    height: 700px;
 }
 
 .signup-title {
@@ -14,6 +14,11 @@
     list-style: none;
     display: flex;
     justify-content: center;
+}
+
+.errors{
+    margin-left: 175px;
+    color: red;
 }
 
 input{
