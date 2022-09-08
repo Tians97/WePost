@@ -1,27 +1,45 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-// import SignupFormPage from "./components/SignupFormPage";
-// // import LoginFormPage from "./components/LoginFormPage";
-// import Navigation from "./components/Navigation";
-import Navbar from "./components/Navbar";
+import { useSelector } from "react-redux";
+import UserPage from "./components/Navbar/UserPage";
+import WelcomePage from "./components/Navbar/WelcomePage";
+import CategoryBar from "./components/Navbar/CategoryBar";
 
 function App() {
+  const sessionUser = useSelector(state => state.session.user)
+
+  let sessionLinks;
+
+  if (sessionUser) {
+    sessionLinks = (
+      <>
+        <UserPage user={sessionUser} />
+        <CategoryBar/>
+      </>
+    );
+  } else {
+    sessionLinks = (
+      <>
+        <WelcomePage />
+      </>
+    )
+
+  }
   return (
     <>
-      <Navbar/>
+      {sessionLinks}
     </>
-    // <>
-    //   <Navigation />
-    //     <Switch>
-    //       {/* <Route path="/login" >
-    //         <LoginFormPage />
-    //       </Route> */}
-    //       <Route path="/signup">
-    //         <SignupFormPage />
-    //       </Route>
-    //     </Switch>
-    // </>
-  );
+  )
+  // <>
+  //   <Navigation />
+  //     <Switch>
+  //       {/* <Route path="/login" >
+  //         <LoginFormPage />
+  //       </Route> */}
+  //       <Route path="/signup">
+  //         <SignupFormPage />
+  //       </Route>
+  //     </Switch>
+  // </>
 }
 
 export default App;
