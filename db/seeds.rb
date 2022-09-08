@@ -22,6 +22,17 @@ ApplicationRecord.transaction do
         email: 'tx2@g.ucla.edu', 
         password: 'password'
     )
+
+    puts "Creating categories..."
+
+    catetory1 = Category.create!(title: "Fitness")
+    catetory2 = Category.create!(title: "Sports")
+    catetory3 = Category.create!(title: "Health")
+    catetory4 = Category.create!(title: "Food")
+    catetory5 = Category.create!(title: "Car")
+    catetory6 = Category.create!(title: "Gaming")
+    catetory7 = Category.create!(title: "Technology")
+    catetory8 = Category.create!(title: "Travel")
     
     puts "Done!"
 end
