@@ -31,6 +31,7 @@ export default function CategoryBar() {
                     variant="scrollable"
                     scrollButtons="auto"
                 >
+                    <Tab className='tab' label="All" variant = "scrollable"></Tab>
                     {categories.map(category => {
                         return <Tab className='tab' label={category.title} variant = "scrollable"></Tab>
                 })}
