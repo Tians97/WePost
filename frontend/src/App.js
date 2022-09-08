@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import UserPage from "./components/Navbar/UserPage";
 import WelcomePage from "./components/Navbar/WelcomePage";
-import CategoryBar from "./components/Navbar/CategoryBar";
+import CategoryBar from "./components/CategoryBar";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)

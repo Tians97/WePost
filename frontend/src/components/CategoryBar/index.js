@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCategories, getCategories } from '../../../store/categories';
+import { fetchCategories, getCategories } from '../../store/categories';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -31,6 +31,7 @@ export default function CategoryBar() {
                     variant="scrollable"
                     scrollButtons="auto"
                 >
+                    <Tab className='tab' label="All" variant="scrollable"></Tab>
                     {categories.map(category => {
                         return <Tab className='tab' label={category.title} variant = "scrollable"></Tab>
                 })}
