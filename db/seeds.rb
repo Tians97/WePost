@@ -22,8 +22,6 @@ ApplicationRecord.transaction do
         email: 'tx2@g.ucla.edu', 
         password: 'password'
     )
-
     
-
     puts "Done!"
 end
