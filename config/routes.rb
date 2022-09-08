@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'stories/index'
+    get 'stories/create'
+    get 'stories/show'
+    get 'stories/destroy'
+    get 'stories/update'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,6 +16,7 @@ Rails.application.routes.draw do
   resources :users, only: :create
   resource :session, only: [:show, :create, :destroy]
   resources :categories, only: [:show, :index]
+  resources :stories, only: [:index, :create, :show, :destroy, :update] 
   end
   get '*path', to: "static_pages#frontend_index"
 end
