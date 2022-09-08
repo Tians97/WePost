@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import UserPage from "./components/Navbar/UserPage";
 import WelcomePage from "./components/Navbar/WelcomePage";
+import CategoryBar from "./components/Navbar/CategoryBar";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
@@ -12,6 +13,7 @@ function App() {
     sessionLinks = (
       <>
         <UserPage user={sessionUser} />
+        <CategoryBar/>
       </>
     );
   } else {
@@ -27,17 +29,17 @@ function App() {
       {sessionLinks}
     </>
   )
-    // <>
-    //   <Navigation />
-    //     <Switch>
-    //       {/* <Route path="/login" >
-    //         <LoginFormPage />
-    //       </Route> */}
-    //       <Route path="/signup">
-    //         <SignupFormPage />
-    //       </Route>
-    //     </Switch>
-    // </>
+  // <>
+  //   <Navigation />
+  //     <Switch>
+  //       {/* <Route path="/login" >
+  //         <LoginFormPage />
+  //       </Route> */}
+  //       <Route path="/signup">
+  //         <SignupFormPage />
+  //       </Route>
+  //     </Switch>
+  // </>
 }
 
 export default App;
