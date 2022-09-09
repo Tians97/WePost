@@ -32,7 +32,7 @@ function ProfileButton({ user }) {
 
   return (
     <div className="dropdown-menu">
-      <a class = "profile-icon" onClick={openMenu}>
+      <a className = "profile-icon" onClick={openMenu}>
         <AccountCircleOutlinedIcon/>
       </a>
         {showMenu && (

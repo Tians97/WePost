@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import UserPage from "./components/Navbar/UserPage";
 import WelcomePage from "./components/Navbar/WelcomePage";
 import CategoryBar from "./components/CategoryBar";
+import StoryIndex from "./components/Story";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
@@ -14,6 +15,7 @@ function App() {
       <>
         <UserPage user={sessionUser} />
         <CategoryBar/>
+        <StoryIndex/>
       </>
     );
   } else {

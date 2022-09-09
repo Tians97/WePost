@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   has_many :stories,
     primary_key: :id,
-    foreign_key: :story_id,
+    foreign_key: :author_id,
     class_name: :Story,
     dependent: :destroy
 
