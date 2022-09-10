@@ -1,7 +1,13 @@
 class Api::StoriesController < ApplicationController
   def index
-    @stories = Story.all
-    render :index
+    if params[:category_id]
+      @stories = Story.where(category_id: params[:category_id])
+      # debugger
+      render :index
+    else
+      @stories = Story.all
+      render :index
+    end
   end
 
   def create

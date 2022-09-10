@@ -1,3 +1,5 @@
+import { dispatch } from "d3"
+
 export const RECEIVE_STORIES = 'RECEIVE_STORIES'
 export const RECEIVE_STORY = 'RECEIVE_STORY'
 export const REMOVE_STORY = 'REMOVE_STORY'
@@ -38,6 +40,16 @@ export const getStory = storyId => state => {
 export const fetchStories = () => async dispatch => {
     const response = await fetch('/api/stories')
     if (response.ok) {
+        const stories = await response.json()
+        dispatch(receiveStories(stories))
+    }
+}
+
+export const fetchCatStories = (categoryId) => async dispatch =>{
+    const response = await fetch(`/api/categories/${categoryId}`)
+    // debugger
+    if (response.ok) {
+        // debugger
         const stories = await response.json()
         dispatch(receiveStories(stories))
     }
@@ -91,7 +103,7 @@ const storiesReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_STORIES:
-            return { ...nextState, ...action.stories }
+            return action.stories
         case RECEIVE_STORY:
             nextState[action.story.id] = action.story
             return nextState

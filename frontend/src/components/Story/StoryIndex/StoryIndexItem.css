@@ -1,0 +1,65 @@
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+.story-container{
+    margin-top: 40px;
+    margin-left: 140px;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.story-container:hover{
+    scale:1.02
+}
+
+.author-name{
+    font-size:large;
+}
+
+.date{
+    color: gray;
+    font-size: medium
+}
+
+.story-title{
+    font-weight: bold;
+    font-size:x-large;
+}
+
+.story-body{
+    color:gray
+}
+
+.story-img{
+    width: 200px;
+    height: 200px;
+}
+
+.story-word-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.story-word-bottom-left{
+    display: flex;
+}
+
+.story-word-bottom-left div{
+    margin-left: 10px;
+}
+
+.reading-time {
+    color: gray;
+}
+
+.button-icon{
+    display: flex;
+    list-style: none;
+}
+
+.button-icon li{
+    margin-left: 20px;
+}

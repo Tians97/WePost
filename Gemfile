@@ -23,6 +23,7 @@ gem "bcrypt"
 gem "jbuilder"
 gem "faker"
 gem "pry-rails"
+gem "aws-sdk-s3"
 
 
 group :development, :test do
