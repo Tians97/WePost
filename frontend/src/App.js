@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Route, Switch, Redirect} from 'react-router-dom';
 import UserPage from "./components/Navbar/UserPage";
 import WelcomePage from "./components/Navbar/WelcomePage";
+import Banner from "./components/Navbar/WelcomePage/Banner";
 import CategoryBar from "./components/CategoryBar";
 import StoryIndex from "./components/Story/StoryIndex/StoryIndex";
 import StoryShow from "./components/Story/StoryShow/StoryShow";
@@ -36,6 +37,7 @@ function App() {
         <WelcomePage />
         <Switch>
           <Route exact path="/">
+            <Banner/>
             <StoryIndex />
           </Route>
         </Switch>

@@ -21,12 +21,10 @@ export default function StoryIndex() {
     },[categoryId])
 
     return (
-        <>
-            <ul className='index-item'>
+        <div className='index-item'>
                 {stories.map(story => {
                     return <li><StoryIndexItem key={story.id} story={story} /></li>
                 })}
-            </ul>
-        </>
+        </div>
     )
 }

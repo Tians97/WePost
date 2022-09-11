@@ -3,17 +3,14 @@
     color: inherit;
 }
 .story-container{
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 140px;
     width: 55%;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    border-bottom: 1px solid #e6e6e6;
 }
 
-.story-container:hover{
-    scale:1.02
-}
 
 .author-name{
     font-size:large;
@@ -27,10 +24,12 @@
 .story-title{
     font-weight: bold;
     font-size:x-large;
+    cursor: pointer;
 }
 
 .story-body{
-    color:gray
+    color:gray;
+    cursor: pointer;
 }
 
 .story-img{
@@ -41,6 +40,7 @@
 .story-word-bottom{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .story-word-bottom-left{
@@ -51,7 +51,21 @@
     margin-left: 10px;
 }
 
+.category-box{
+    border-radius: 25px;
+    background-color:#e6e6e6;
+    color: black;
+    display: flex;
+}
+
+#category-box {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
 .reading-time {
+    margin-top: 5px;
     color: gray;
 }
 
