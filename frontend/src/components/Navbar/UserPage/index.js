@@ -43,7 +43,7 @@ export default function UserPage({user}) {
                         </div>
                     </div>
                     <div className='nav-post'>
-                        <NavLink style={{ color: "black" }} to="/">
+                        <NavLink style={{ color: "black" }} to="/stories/new_story">
                             <CreateOutlinedIcon />
                         </NavLink>
                     </div>
