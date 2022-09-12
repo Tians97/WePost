@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import { getStories, fetchStories,fetchCatStories } from '../../../store/stories'
+import { getStories, fetchStories,fetchCatStories,fetchUserStories } from '../../../store/stories'
 import StoryIndexItem from './StoryIndexItem';
 import"./StoryIndex.css"
 
 export default function StoryIndex() {
 
     const {categoryId} = useParams()
+    const {userId} = useParams()
 
     const dispatch = useDispatch()
     const stories = useSelector(getStories)
@@ -15,18 +16,19 @@ export default function StoryIndex() {
     useEffect(() => {
         if(categoryId){
             dispatch(fetchCatStories(categoryId))
-        } else {
+        } else if (userId) {
+            dispatch(fetchUserStories(userId))
+        }
+        else {
             dispatch(fetchStories())
         }
-    },[categoryId])
+    },[categoryId, userId])
 
     return (
-        <>
-            <ul className='index-item'>
+        <div className='index-item'>
                 {stories.map(story => {
-                    return <li><StoryIndexItem key={story.id} story={story} /></li>
+                    return <StoryIndexItem key={story.id} story={story} />
                 })}
-            </ul>
-        </>
+        </div>
     )
 }

@@ -3,9 +3,11 @@ import { useSelector } from "react-redux";
 import { Route, Switch, Redirect} from 'react-router-dom';
 import UserPage from "./components/Navbar/UserPage";
 import WelcomePage from "./components/Navbar/WelcomePage";
+import Banner from "./components/Navbar/WelcomePage/Banner";
 import CategoryBar from "./components/CategoryBar";
 import StoryIndex from "./components/Story/StoryIndex/StoryIndex";
 import StoryShow from "./components/Story/StoryShow/StoryShow";
+import UserStoryIndex from "./components/Story/UserStoryIndex";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
@@ -15,16 +17,25 @@ function App() {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <UserPage user={sessionUser} />
+        
         <Switch>
           <Route exact path="/">
+            <UserPage user={sessionUser} />
             <CategoryBar />
             <StoryIndex/>
           </Route>
-          <Route path="/stories/:storyId" component={StoryShow}/>
           <Route path="/categories/:categoryId">
+            <UserPage user={sessionUser} />
             <CategoryBar />
             <StoryIndex />
+          </Route>
+          <Route path="/stories/:storyId">
+            <UserPage user={sessionUser} />
+            <StoryShow/>
+          </Route>
+          <Route path="/users/:userId/stories">
+            <UserPage user={sessionUser} />
+            <UserStoryIndex />
           </Route>
           
         </Switch>
@@ -36,6 +47,7 @@ function App() {
         <WelcomePage />
         <Switch>
           <Route exact path="/">
+            <Banner/>
             <StoryIndex />
           </Route>
         </Switch>
