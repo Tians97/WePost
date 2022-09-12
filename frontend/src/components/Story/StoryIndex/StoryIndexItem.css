@@ -11,9 +11,15 @@
     border-bottom: 1px solid #e6e6e6;
 }
 
+.user-data{
+    display: flex;
+}
+
 
 .author-name{
     font-size:large;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .date{

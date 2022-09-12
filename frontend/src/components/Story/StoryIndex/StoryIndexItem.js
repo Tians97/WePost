@@ -5,6 +5,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import dateFormat from "dateformat";
 import { readingTime } from 'reading-time-estimator'
+import {Avatar} from 'evergreen-ui'
 import "./StoryIndexItem.css"
 
 
@@ -14,8 +15,11 @@ export default function StoryIndexItem({story}) {
     return (
             <div className='story-container'>
                 <div className='story-word'>
-                    <div className='user-date'>
-                        <p className='author-name'>{story.author}<span className="date"> · {dateFormat(story.updatedAt, "fullDate")}</span></p>
+                    <div className='user-data'>
+                        <a>
+                        <Avatar className="user-icon" style={{ zIndex: 0}} name={`${story.author}`} size={30} />
+                        </a>
+                        <a className='author-name'>{story.author}<span className="date"> · {dateFormat(story.updatedAt, "fullDate")}</span></a>
                     </div>
                     <Link className='link' to={`/stories/${story.id}`}>
                         <div className='story-title'>
