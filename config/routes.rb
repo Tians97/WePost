@@ -13,12 +13,17 @@ Rails.application.routes.draw do
   # post 'api/test', to: 'application#test'
 
   namespace :api, defaults: { format: :json } do
-  resources :users, only: :create
-  resource :session, only: [:show, :create, :destroy]
-  resources :categories, only: [:index]
-  resources :stories, only: [:index, :create, :show, :destroy, :update]
 
-  get "/categories/:category_id", to: "stories#index"
+    resources :users, only: :create do
+      resources :stories, only:[:index]
+    end
+
+    resource :session, only: [:show, :create, :destroy]
+    resources :categories, only: [:index]
+    resources :stories, only: [:index, :create, :show, :destroy, :update]
+
+    get "/categories/:category_id", to: "stories#index"
   end
+  
   get '*path', to: "static_pages#frontend_index"
 end

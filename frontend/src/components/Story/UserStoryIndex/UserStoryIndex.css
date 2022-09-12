@@ -1,0 +1,67 @@
+.user-stories-container{
+    width: 50%;
+    padding: 40px;
+    position: relative;
+    left: 140px;
+}
+
+.user-story-index-item-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-stories-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-stories-header h1{
+    font-size: 50px;
+}
+
+.user-stories-header a{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    padding-top: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 17px;
+    border-radius: 25px;
+    background-color: #1b8917;
+    color: white;
+    display: flex;
+    cursor: pointer;
+}
+
+.user-story-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.user-story-body{
+    color: gray;
+    margin-right: 40px
+}
+
+.edit-button a{
+    margin-right: 30px;
+}
+
+.edit-delete{
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(198, 12, 12);
+    color: white;
+    cursor: pointer;
+}
+
+.edit-update {
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #1b8917;
+    color: white;
+    cursor: pointer;
+}
+

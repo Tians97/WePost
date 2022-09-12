@@ -36,7 +36,7 @@ export default function CategoryBar() {
                 >
                     <Tab className='tab' label="For you" variant="scrollable" to = {'/'} component={Link}></Tab>
                     {categories.map(category => {
-                        return <Tab className='tab' label={category.title} variant="scrollable" to={`/categories/${category.id}`} component={Link}></Tab>
+                        return <Tab key={category.id} className='tab' label={category.title} variant="scrollable" to={`/categories/${category.id}`} component={Link}></Tab>
                 })}
                 </Tabs>
             </Box>

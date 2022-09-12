@@ -1,0 +1,37 @@
+.story-form-container{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.story-form-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.story-form-header-left{
+    display: flex;
+}
+
+.story-form-header-left img{
+    margin-top: 15px;
+    margin-right: 20px
+}
+
+#story-form-title{
+    margin-top: 30px;
+    font-size: 40px;
+    width: 500px;
+    border:none
+}
+
+textarea{
+    margin-top: 40px;
+    height: 500px;
+    width: 600px;
+    font-size: 20px;
+    border:none
+}
+
+
+
+

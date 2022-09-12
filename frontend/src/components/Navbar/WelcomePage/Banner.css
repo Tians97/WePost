@@ -1,0 +1,31 @@
+.second-header {
+    background-color: paleturquoise;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+
+.second-header-left {
+    padding: 90px
+}
+
+.second-header-title {
+    margin-top: 0;
+    font-size: 100px;
+    font-family: Bradley Hand
+}
+
+.second-header-content {
+    padding-right: 100px;
+    font-family: Venus;
+    font-weight: lighter;
+}
+
+.W {
+    width: 500px;
+    height: 500px;
+    padding-right: 10vw
+}
