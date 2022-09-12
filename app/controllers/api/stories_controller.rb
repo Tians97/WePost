@@ -4,6 +4,8 @@ class Api::StoriesController < ApplicationController
       @stories = Story.where(category_id: params[:category_id])
       # debugger
       render :index
+    elsif params[:user_id]
+      @stories = Story.where(author_id: params[:user_id])
     else
       @stories = Story.all
       render :index
@@ -21,7 +23,8 @@ class Api::StoriesController < ApplicationController
   end
 
   def show
-
+    # @story = Story.find(params[:id])
+    # render :show
   end
 
   def update

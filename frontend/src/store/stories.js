@@ -1,4 +1,4 @@
-import { dispatch } from "d3"
+import csrfFetch from "./csrf.js"
 
 export const RECEIVE_STORIES = 'RECEIVE_STORIES'
 export const RECEIVE_STORY = 'RECEIVE_STORY'
@@ -38,7 +38,7 @@ export const getStory = storyId => state => {
 }
 
 export const fetchStories = () => async dispatch => {
-    const response = await fetch('/api/stories')
+    const response = await csrfFetch('/api/stories')
     if (response.ok) {
         const stories = await response.json()
         dispatch(receiveStories(stories))
@@ -46,7 +46,7 @@ export const fetchStories = () => async dispatch => {
 }
 
 export const fetchCatStories = (categoryId) => async dispatch =>{
-    const response = await fetch(`/api/categories/${categoryId}`)
+    const response = await csrfFetch(`/api/categories/${categoryId}`)
     // debugger
     if (response.ok) {
         // debugger
@@ -55,9 +55,17 @@ export const fetchCatStories = (categoryId) => async dispatch =>{
     }
 }
 
+export const fetchUserStories = (userId) => async dispatch => {
+    const response = await csrfFetch(`/api/users/${userId}/stories`)
+    if (response.ok) {
+        // debugger
+        const stories = await response.json()
+        dispatch(receiveStories(stories))
+    }
+}
 
 export const fetchStory = (storyId) => async dispatch => {
-    const response = await fetch(`/api/stories/${storyId}`)
+    const response = await csrfFetch(`/api/stories/${storyId}`)
     if (response.ok) {
         const story = await response.json()
         dispatch(receiveStory(story))
@@ -65,7 +73,7 @@ export const fetchStory = (storyId) => async dispatch => {
 }
 
 export const createStory = (story) => async dispatch => {
-    const response = await fetch('/api/stories', {
+    const response = await csrfFetch('/api/stories', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(story)
@@ -77,7 +85,7 @@ export const createStory = (story) => async dispatch => {
 }
 
 export const updateStory = (story) => async dispatch => {
-    const response = await fetch(`/api/stories/${story.id}`, {
+    const response = await csrfFetch(`/api/stories/${story.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(story)
@@ -89,7 +97,7 @@ export const updateStory = (story) => async dispatch => {
 }
 
 export const deleteStory = (storyId) => async dispatch => {
-    const response = await fetch(`/api/stories/${storyId}`, {
+    const response = await csrfFetch(`/api/stories/${storyId}`, {
         method: "DELETE"
     })
     if (response.ok) {
