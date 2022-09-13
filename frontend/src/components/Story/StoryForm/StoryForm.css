@@ -34,8 +34,6 @@
     font-size: 40px;
     width: 500px;
     border:none;
-    display: flex;
-    justify-content: space-between;
 }
 
 textarea{

@@ -19,26 +19,34 @@ export default function StoryForm({user}) {
     if (type == "Create Story") {
         storyData = {
             title: "",
-            body: ""
+            body: "",
+            category: null,
+            photo:null
         }
     }
 
     const [story, setStory] = useState(storyData)
     const [category, setCategory] = useState('');
+    
 
     useEffect(() => {
         if (storyId) {
             dispatch(fetchStory(storyId))
         }
+        dispatch(fetchCategories())
     }, [storyId])
 
 
     function handleSubmit(e) {
-        if (type === "Update Story") {
-            dispatch(updateStory(story))
-        } else {
-            dispatch(createStory(story))
-        }
+        debugger
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('story[title]', story.title);
+        formData.append('story[body]', story.body);
+        formData.append('story[categoryId]', category.id)
+        formData.append('story[photo]', story.photo)
+
+        dispatch(createStory(formData))
     }
 
 
@@ -56,13 +64,13 @@ export default function StoryForm({user}) {
                     <div className='story-form-title'>
                         <input id='story-form-title' placeholder='Title' value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }}></input>
                         <select
-                            name='phoneType'
+                            name='category'
                             onChange={e => setCategory(e.target.value)}
                             value={category}
                         >
                             <option value='' disabled>Select a category type...</option>
                             {categories.map(category =>
-                                <option key={category}>{category}</option>
+                                <option key={category.id}>{category.title}</option>
                             )}
                         </select>
                     </div>

@@ -8,7 +8,7 @@ export default function ReviewIndex() {
     return (
         <>
             <SideSheet width={400} isShown={isShown}  onCloseComplete={() => setIsShown(false)}>
-                <Paragraph margin={40}>Basic Example</Paragraph>
+                <a>Review</a>
             </SideSheet>
             <a onClick={() => setIsShown(true)}><ChatBubbleOutlineOutlinedIcon/></a>
         </>

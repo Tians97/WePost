@@ -73,14 +73,14 @@ export const fetchStory = (storyId) => async dispatch => {
 }
 
 export const createStory = (story) => async dispatch => {
-    const response = await csrfFetch('/api/stories', {
+    const response = await fetch('/api/stories', {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(story)
+        headers: { 'X-CSRF-Token': sessionStorage.getItem('X-CSRF-Token')},
+        body: story
     })
     if (response.ok) {
-        const story = await response.json()
-        dispatch(receiveStory(story))
+        const storyData = await response.json()
+        dispatch(receiveStory(storyData))
     }
 }
 
