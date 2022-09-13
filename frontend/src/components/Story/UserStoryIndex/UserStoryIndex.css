@@ -19,6 +19,10 @@
     font-size: 50px;
 }
 
+.write-a-story{
+    text-decoration: none;
+}
+
 .user-stories-header a{
     margin-top: 60px;
     margin-bottom: 30px;
@@ -40,7 +44,10 @@
 
 .user-story-body{
     color: gray;
-    margin-right: 40px
+}
+
+.story-image{
+    margin-top: 30px;
 }
 
 .edit-button a{

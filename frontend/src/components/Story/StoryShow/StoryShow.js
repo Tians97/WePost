@@ -12,8 +12,8 @@ import LinkIcon from '@mui/icons-material/Link';
 import BookmarkAddOutlined from '@mui/icons-material/BookmarkAddOutlined';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
+import ReviewIndex from '../../Review/ReviewIndex';
 import './StoryShow.css'
 
 
@@ -63,6 +63,8 @@ export default function StoryShow() {
                 {story.title}
             </div>
 
+            <img className='story-show-image' src={`${story.photoUrl}`}/>
+
             <div className='story-show-body'>
                 {story.body}
             </div>
@@ -70,7 +72,7 @@ export default function StoryShow() {
             <div className='story-show-footer'>
                 <div className='story-show-footer-left'>
                     <a><FavoriteBorderIcon /></a>
-                    <a><ChatBubbleOutlineOutlinedIcon /></a>
+                    <a><ReviewIndex/></a>
                 </div>
                 <div className='story-show-footer-right'>
                     <a><IosShareOutlinedIcon /></a>

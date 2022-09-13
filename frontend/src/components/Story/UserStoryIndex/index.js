@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getStories, fetchUserStories } from '../../../store/stories'
 import "./UserStoryIndex.css"
 import UserStoryIndexItem from './UserStoryIndexItem'
@@ -19,7 +19,7 @@ export default function UserStoryIndex() {
     <div className = "user-stories-container">
       <div className='user-stories-header'>
         <h1>Your stories</h1>
-        <a>Write a story</a>
+        <Link className='write-a-story' to="/stories/new_story">Write a story</Link>
       </div>
       <div className='user-stories-index'>
         {stories.map(story => {

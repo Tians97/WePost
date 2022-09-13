@@ -1,15 +1,27 @@
 .story-form-container{
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 50%;
+    padding: 40px;
+    position: relative;
+    left: 140px;
 }
 
 .story-form-header{
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 40px;
 }
 
-.story-form-header-left{
-    display: flex;
+
+
+.story-form-publish-button{
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #1b8917;
+    color: white;
+    cursor: pointer;
+}
+
+.upload-box{
+    margin-top: 40px;
 }
 
 .story-form-header-left img{

@@ -31,6 +31,7 @@ function App() {
             <StoryIndex />
           </Route>
           <Route exact path="/stories/new_story">
+            <UserPage user={sessionUser} />
             <StoryForm user={sessionUser}/>
           </Route>
           <Route path="/stories/:storyId">
@@ -53,7 +54,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Banner/>
-            <StoryIndex />
+            <StoryIndex/>
           </Route>
         </Switch>
       </>

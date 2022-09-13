@@ -17,7 +17,7 @@ export default function UserStoryIndexItem({ story }) {
                     </div>
                 </Link>
                 <div className='story-image'>
-                    <img className='story-img' src='https://i.postimg.cc/sDxkgs9J/Untitled-design-1.png' />
+                    <img className='story-img' src={`${story.photoUrl}`} />
                 </div>
             </div>
             <div className='edit-button'>

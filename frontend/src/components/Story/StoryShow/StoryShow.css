@@ -52,6 +52,12 @@
     padding-bottom: 40px
 }
 
+.story-show-image{
+    width: auto;
+    height: auto;
+    margin-bottom: 40px;
+}
+
 .story-show-body{
     font-size:20px;
     line-height: 32px;
