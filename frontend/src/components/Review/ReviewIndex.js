@@ -7,11 +7,7 @@ export default function ReviewIndex() {
     const [isShown, setIsShown] = React.useState(false)
     return (
         <>
-            <SideSheet
-                isShown={isShown}
-                onCloseComplete={() => setIsShown(false)}
-                preventBodyScrolling
-            >
+            <SideSheet width={400} isShown={isShown}  onCloseComplete={() => setIsShown(false)}>
                 <Paragraph margin={40}>Basic Example</Paragraph>
             </SideSheet>
             <a onClick={() => setIsShown(true)}><ChatBubbleOutlineOutlinedIcon/></a>

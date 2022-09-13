@@ -24,7 +24,7 @@ export default function StoryShow() {
 
     useEffect(() => {
         dispatch(fetchStory(storyId))
-    },[storyId]) 
+    }, [storyId]) 
 
     if (!story){
         return null
