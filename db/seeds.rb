@@ -5,8 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'open-uri'
 
-ApplicationRecord.transaction do 
+
+# ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
@@ -52,12 +54,16 @@ ApplicationRecord.transaction do
 
     puts "Creating stories..."
 
+    
     story1 = Story.create!(
         title: "5 Mistakes Too Many People Make When Trying to Build Muscle",
         body: "Building muscle ultimately comes down to getting a few key things right.Unfortunately, a lot of people get too many things wrong. Then they don’t see the progress they expect, and they give up way too quickly. If you want to build muscle, make sure you’re not making any of these mistakes.1. Not sleeping enough If you want to build muscle, you need to be sleeping a lot. You should be aiming for 8 hours every night.Stick to a consistent sleep/wake schedule and ensure you have at least 8 hours between your sleep and wake times.2. Not eating enough protein To stimulate muscle protein synthesis, you need to be consuming at least 30g of protein per sitting, and at least 1g per pound of body weight over the whole day. 3. Not managing stress When you’re stressed, your body releases cortisol. Cortisol will sabotage your muscle growth. Make sure you include stress management practices in your day to day routine. Consistency is the number one secret to putting on muscle. Show up regularly, and you will be rewarded. It’s going to be really hard to put on muscle if you don’t stay consistent. Find a program and routine you can stick to. 5. Not prioritizing recover You won’t put on muscle if you don’t make time for recovery. This means: Sleeping 8+ hours Doing active recovery Eating adequate protein Getting enough micronutrient",
         author_id: 1,
-        category_id: 1
+        category_id: 1,
         )
+
+    story1.photo.attach(io: URI.open('https://wepost-seed.s3.us-west-1.amazonaws.com/1.jpeg'), filename: '1.jpeg')
+
 
     story2 = Story.create!(
         title: "How To Ace Eating A Tasting Menu",
@@ -68,54 +74,37 @@ ApplicationRecord.transaction do
         author_id: 2,
         category_id: 4
         )
+    
+    story2.photo.attach(io: URI.open('https://wepost-seed.s3.us-west-1.amazonaws.com/2.jpeg'), filename: '2.jpeg')
 
     story3 = Story.create!(
         title: "10 Life-Changing Lessons I Learned From Travel",
         body: "In the last ten years, I’ve been lucky enough to do a lot of travelling. I’ve been to some amazing places, met some incredible people and had some once-in-a-lifetime experiences. Along the way, I’ve learned some valuable lessons that have changed my life for the better. Here are ten of the most important ones.
-
 1. Life is short — make the most of it
 This is probably the most important lesson I’ve learned. Life is incredibly short and it can be over in the blink of an eye. That’s why it’s so important to make the most of every single day. Do things that make you happy, spend time with the people you love and don’t take anything for granted.
-
 2. It’s OK to be scared
-
 When you’re travelling, you’ll inevitably find yourself in some scary situations. But that’s OK! Being scared is normal and it doesn’t mean you’re a coward. It just means you’re human. So, don’t be afraid to face your fears head-on. It’s the only way to overcome them.
-
 3. You don’t need much to be happy
-
 One of the best things about travelling is that it makes you realise how little you actually need to be happy. When you’re on the road, all you have is your backpack and the clothes on your back. And yet, you can still have the time of your life. It’s a great reminder that material possessions aren’t everything.
-
 4. There’s no such thing as a perfect trip
-
 No matter how well you plan your trip, things will always go wrong. You might miss your bus, get lost or get sick. But that’s all part of the adventure! Embrace the chaos and roll with the punches. It’s all part of the fun.
-
 5. People are basically good
-
 One of the best things about travel is the people you meet along the way. There are good people everywhere you go, no matter what country you’re in. People are friendly, helpful and hospitable. It’s a great reminder that, despite what you see on the news, the world is a good place.
-
 6. It’s OK to be alone
-
 One of the biggest fears people have is travelling alone. But it’s actually a great experience! It’s a chance to learn more about yourself and what you’re capable of. It’s also a great opportunity to meet new people. So, don’t be afraid to travel solo. It’s one of the best things you can do.
-
 7. There’s no such thing as a perfect place
-
 No matter where you go, you’ll always find imperfections. There’s no such thing as a perfect place. So, don’t waste your time searching for it. Instead, learn to appreciate the beauty in imperfection. It’s what makes life interesting.
-
 8. You can’t please everyone
-
 One of the hardest things to accept is that you can’t please everyone. You’ll never find a place that everyone loves. And you’ll never find a travel companion who agrees with everything you want to do. That’s OK! It’s normal. Just go with the flow and do what makes you happy.
-
 9. It’s OK to make mistakes
-
 When you’re travelling, you’ll make lots of mistakes. You might get lost, miss your train or say the wrong thing. But that’s OK! It’s all part of the learning process. So, don’t beat yourself up about it. Just laugh it off and carry on.
-
 10. The best things in life are free
-
 One of the best things about travel is that it reminds you that the best things in life are free. You don’t need to spend a lot of money to have a good time. Sometimes, the simplest things are the most fun. So, don’t be afraid to try new things and get off the beaten path.
-
 These are just some of the life-changing lessons I’ve learned from travel. I’m sure there are many more. But these are the ones that have had the biggest impact on me. I hope they’ll have a similar effect on you.",
         author_id: 3,
         category_id: 8
         )
+    story3.photo.attach(io: URI.open('https://wepost-seed.s3.us-west-1.amazonaws.com/3.jpeg'), filename: '3.jpeg')
     
     puts "Done!"
-end
+# end

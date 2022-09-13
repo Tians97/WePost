@@ -43,7 +43,7 @@ export const fetchStories = () => async dispatch => {
         const stories = await response.json()
         dispatch(receiveStories(stories))
     }
-}
+} 
 
 export const fetchCatStories = (categoryId) => async dispatch =>{
     const response = await csrfFetch(`/api/categories/${categoryId}`)

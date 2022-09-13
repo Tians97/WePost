@@ -12,6 +12,7 @@ import "./StoryIndexItem.css"
 export default function StoryIndexItem({story}) {
     const text = story.body
     const result = readingTime(text,100)
+    console.log(story.photoUrl)
     return (
             <div className='story-container'>
                 <div className='story-word'>
@@ -49,7 +50,7 @@ export default function StoryIndexItem({story}) {
                     
                 </div>
                 <div className='story-image'>
-                    <img className='story-img' src='https://i.postimg.cc/sDxkgs9J/Untitled-design-1.png'/>
+                    <img className='story-img' src={story.photoUrl}/>
                 </div>
             </div>
     )
