@@ -77,7 +77,7 @@ export default function StoryShow() {
             <div className='story-show-footer'>
                 <div className='story-show-footer-left'>
                     <a><FavoriteBorderIcon /></a>
-                    
+                    <a><ReviewIndex reviews={reviews} /></a>
                 </div>
                 <div className='story-show-footer-right'>
                     <a><IosShareOutlinedIcon /></a>
@@ -85,8 +85,7 @@ export default function StoryShow() {
                     <a><MoreHorizIcon /></a>
                 </div>
             </div>
-            <a><ReviewIndex reviews = {reviews}/></a>
-            <ReviewForm/>
+            
             
         </div>
     )

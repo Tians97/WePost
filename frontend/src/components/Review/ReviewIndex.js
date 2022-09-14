@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import { SideSheet, Paragraph } from 'evergreen-ui';
+import { SideSheet} from 'evergreen-ui';
 import './ReviewIndex.css'
-import { fetchReviews, getReviews } from '../../store/reviews';
+import { fetchReviews} from '../../store/reviews';
 import { useDispatch } from 'react-redux';
 import ReviewIndexItem from './ReviewIndexItem';
-import { useSelector } from 'react-redux';
+import ReviewForm from './ReviewForm';
 
 export default function ReviewIndex({reviews}) {
-    // const [isShown, setIsShown] = React.useState(false)
+    const [isShown, setIsShown] = React.useState(false)
     const dispatch = useDispatch()
     console.log (reviews);
     useEffect(() => {
@@ -16,18 +16,13 @@ export default function ReviewIndex({reviews}) {
     }, [])
     return (
         <>
-            {/* <SideSheet width={400} isShown={isShown}  onCloseComplete={() => setIsShown(false)}>
-                <ReviewForm/>
-            </SideSheet>
-            <a onClick={() => setIsShown(true)}><ChatBubbleOutlineOutlinedIcon/></a> */}
-            {/* <ChatBubbleOutlineOutlinedIcon /> */}
-            <h2>Responses</h2>
-            <ul>
+            <SideSheet width={400} isShown={isShown}  onCloseComplete={() => setIsShown(false)}>
+                <ReviewForm reviews={reviews}/>
                 {reviews.map(review => {
-                    return <li><ReviewIndexItem key={review.id} review={review} /></li>
+                    return <ReviewIndexItem key={review.id} review={review} />
                 })}
-            </ul>
-
+            </SideSheet>
+            <a onClick={() => setIsShown(true)}><ChatBubbleOutlineOutlinedIcon/></a>
         </>
 
     )

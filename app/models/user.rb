@@ -20,7 +20,7 @@ class User < ApplicationRecord
     class_name: :Story,
     dependent: :destroy
 
-  has_many :reveiws,
+  has_many :reviews,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :Review,

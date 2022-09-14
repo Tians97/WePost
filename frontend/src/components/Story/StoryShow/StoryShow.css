@@ -42,7 +42,8 @@
 
 .story-show-link-bottom li{
     margin-left: 15px;
-    color:gray
+    color:gray;
+    cursor: pointer;
 }
 
 .story-show-title{
@@ -80,8 +81,10 @@
 
 .story-show-footer-left a{
     margin-right: 30px;
+    cursor: pointer;
 }
 
 .story-show-footer-right a {
     margin-right: 30px;
+    cursor: pointer;
 }
