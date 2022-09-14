@@ -12,5 +12,11 @@ class Story < ApplicationRecord
         foreign_key: :category_id,
         class_name: :Category
 
+    has_many :stories,
+        primary_key: :id,
+        foreign_key: :story_id,
+        class_name: :Review,
+        dependent: :destroy
+
     has_one_attached :photo
 end

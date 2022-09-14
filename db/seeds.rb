@@ -14,12 +14,14 @@ require 'open-uri'
     User.destroy_all
     Category.destroy_all
     Story.destroy_all
+    Review.destroy_all
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('categories')
     ApplicationRecord.connection.reset_pk_sequence!('stories')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -106,5 +108,21 @@ These are just some of the life-changing lessons Iâ€™ve learned from travel. Iâ€
         )
     story3.photo.attach(io: URI.open('https://wepost-seed.s3.us-west-1.amazonaws.com/3.jpeg'), filename: '3.jpeg')
     
+
+    puts "Creating reivews..."
+
+    review1 = Review.create!(body: "I like your post", author_id: 1, story_id: 1)
+    review2 = Review.create!(body: "Nice Job", author_id: 1, story_id: 2)
+    review3 = Review.create!(body: "I like travel, greate post!", author_id: 1, story_id: 3)
+    review4 = Review.create!(body: "I like your post", author_id: 2, story_id: 1)
+    review5 = Review.create!(body: "I like your post", author_id: 2, story_id: 2)
+    review6 = Review.create!(body: "I like your post", author_id: 2, story_id: 3)
+    review7 = Review.create!(body: "I like your post", author_id: 3, story_id: 1)
+    review8 = Review.create!(body: "I like your post", author_id: 3, story_id: 2)
+    review9 = Review.create!(body: "I like your post", author_id: 3, story_id: 3)
+    review10 = Review.create!(body: "Agree!!!", author_id: 3, story_id: 1)
+
+
+
     puts "Done!"
 # end

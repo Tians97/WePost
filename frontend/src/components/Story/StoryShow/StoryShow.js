@@ -15,12 +15,17 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
 import ReviewIndex from '../../Review/ReviewIndex';
 import './StoryShow.css'
+import ReviewForm from '../../Review/ReviewForm';
+import { getReviews, getReviewsByStoryId } from '../../../store/reviews';
 
 
 export default function StoryShow() {
     const {storyId} = useParams()
     const dispatch = useDispatch()
     const story = useSelector(getStory(storyId))
+
+    const reviews = useSelector(getReviewsByStoryId(storyId))
+    
 
     useEffect(() => {
         dispatch(fetchStory(storyId))
@@ -72,7 +77,7 @@ export default function StoryShow() {
             <div className='story-show-footer'>
                 <div className='story-show-footer-left'>
                     <a><FavoriteBorderIcon /></a>
-                    <a><ReviewIndex/></a>
+                    
                 </div>
                 <div className='story-show-footer-right'>
                     <a><IosShareOutlinedIcon /></a>
@@ -80,7 +85,9 @@ export default function StoryShow() {
                     <a><MoreHorizIcon /></a>
                 </div>
             </div>
-
+            <a><ReviewIndex reviews = {reviews}/></a>
+            <ReviewForm/>
+            
         </div>
     )
 }

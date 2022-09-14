@@ -20,6 +20,13 @@ class User < ApplicationRecord
     class_name: :Story,
     dependent: :destroy
 
+  has_many :reveiws,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Review,
+    dependent: :destroy
+  
+
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
     user = User.find_by(field => credential)

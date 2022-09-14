@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :categories, only: [:index]
     resources :stories, only: [:index, :create, :show, :destroy, :update]
+    resources :reviews, only: [:index, :create, :update, :destroy, :show]
 
     get "/categories/:category_id", to: "stories#index"
   end
