@@ -7,6 +7,7 @@ import dateFormat from "dateformat";
 import { readingTime } from 'reading-time-estimator'
 import {Avatar} from 'evergreen-ui'
 import "./StoryIndexItem.css"
+import defaultImage from  "./default.png" 
 
 
 export default function StoryIndexItem({story}) {
@@ -49,8 +50,9 @@ export default function StoryIndexItem({story}) {
                     </div>
                     
                 </div>
+
                 <div className='story-image'>
-                    <img className='story-img' src={story.photoUrl}/>
+                <img className='story-img' src={story.photoUrl ? story.photoUrl : defaultImage} />
                 </div>
             </div>
     )

@@ -1,49 +1,34 @@
-.story-form-container{
+.story-form-container {
     width: 50%;
     padding: 40px;
     position: relative;
     left: 140px;
 }
 
-.story-form-header{
+.story-form-header {
     margin-bottom: 40px;
 }
 
 
 
-.story-form-publish-button{
+.story-form-publish-button {
     border-radius: 25px;
     padding-left: 15px;
     padding-right: 15px;
     background-color: #1b8917;
     color: white;
     cursor: pointer;
+    position: relative;
+    left: 90%
 }
 
-.upload-box{
+.upload-box {
     margin-top: 40px;
 }
 
-.story-form-header-left img{
+.story-form-header-left img {
     margin-top: 15px;
     margin-right: 20px
 }
-
-#story-form-title{
-    margin-top: 30px;
-    font-size: 40px;
-    width: 500px;
-    border:none;
-}
-
-textarea{
-    margin-top: 40px;
-    height: 500px;
-    width: 600px;
-    font-size: 20px;
-    border:none
-}
-
-
 
 

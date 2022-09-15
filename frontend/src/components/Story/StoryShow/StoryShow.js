@@ -15,8 +15,8 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
 import ReviewIndex from '../../Review/ReviewIndex';
 import './StoryShow.css'
-import ReviewForm from '../../Review/ReviewForm';
-import { getReviews, getReviewsByStoryId } from '../../../store/reviews';
+import {getReviewsByStoryId } from '../../../store/reviews';
+import defaultImage from "../StoryIndex/default.png"
 
 
 export default function StoryShow() {
@@ -68,7 +68,7 @@ export default function StoryShow() {
                 {story.title}
             </div>
 
-            <img className='story-show-image' src={`${story.photoUrl}`}/>
+            <img className='story-show-image' src={story.photoUrl ? story.photoUrl : defaultImage}/>
 
             <div className='story-show-body'>
                 {story.body}

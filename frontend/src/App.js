@@ -9,6 +9,7 @@ import StoryIndex from "./components/Story/StoryIndex/StoryIndex";
 import StoryShow from "./components/Story/StoryShow/StoryShow";
 import UserStoryIndex from "./components/Story/UserStoryIndex";
 import StoryForm from "./components/Story/StoryForm/StoryForm";
+import EditStoryForm from "./components/Story/StoryForm/EditStoryForm";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
@@ -34,10 +35,15 @@ function App() {
             <UserPage user={sessionUser} />
             <StoryForm user={sessionUser}/>
           </Route>
-          <Route path="/stories/:storyId">
+          <Route exact path="/stories/:storyId">
             <UserPage user={sessionUser} />
             <StoryShow/>
           </Route>
+          <Route exact path="/stories/:storyId/edit">
+            <UserPage user={sessionUser} />
+            <EditStoryForm/>
+          </Route>
+          
           <Route path="/users/:userId/stories">
             <UserPage user={sessionUser} />
             <UserStoryIndex />

@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getStory, fetchStory, createStory, updateStory } from '../../../store/stories';
-import { getCategories, fetchCategories } from '../../../store/categories';
-import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -11,30 +7,35 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import './StoryForm.css'
+import { useParams, useHistory } from 'react-router-dom';
+import { getStory, fetchStory, updateStory } from '../../../store/stories';
+import { getCategories, fetchCategories } from '../../../store/categories';
 
-
-
-
-export default function StoryForm({ user }) {
-    const { storyId } = useParams()
+export default function EditStoryForm() {
     const dispatch = useDispatch()
+    const {storyId} = useParams()
+    const user = useSelector((state) => state.session.user);
     const history = useHistory()
     const categories = useSelector(getCategories)
     let storyData = useSelector(getStory(storyId))
+    // console.log(storyData)
 
-
-    storyData = {
-        title: "",
-        body: "",
-        category: null,
-        photo: []
+    const categoryContent = {
+        1: "Fitness",
+        2: "Sport",
+        3: "Health",
+        4: "Food",
+        5: "Car",
+        6: "Gaming",
+        7: "Technology",
+        8: "Travel"
     }
-        
+
     const [story, setStory] = useState(storyData)
-    const [category, setCategory] = useState("");
-    const [image, setImage] = useState([])
+    const [category, setCategory] = useState(story.categoryId);
+    const [image, setImage] = useState()
 
-
+    // console.log(category)
 
     useEffect(() => {
         if (storyId) {
@@ -42,7 +43,6 @@ export default function StoryForm({ user }) {
         }
         dispatch(fetchCategories())
     }, [storyId])
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -52,12 +52,9 @@ export default function StoryForm({ user }) {
         formData.append('story[categoryId]', category)
         formData.append('story[photo]', image)
 
-        dispatch(createStory(formData))
-        history.push('/')
+        dispatch(updateStory(formData, storyId))
+        history.push(`/stories/${storyId}`)
     }
-
-
-
 
     return (
         <form>
@@ -66,7 +63,7 @@ export default function StoryForm({ user }) {
                     <h1>Draft in {user.username}</h1>
                 </div>
 
-                
+
                 <div className='upload-box'>
                     <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                 </div>
@@ -81,12 +78,12 @@ export default function StoryForm({ user }) {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField id="standard-basic" helperText="Please enter your story title" label="Title" variant="standard" value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }} />
+                            <TextField style={{ width: '100%' }} id="standard-basic" helperText="Please enter your story title" label="Title" variant="standard" value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }} />
                         </Box>
                         <br /><br />
                         <Box sx={{ minWidth: 120 }}>
                             <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Category</InputLabel>
+                                <InputLabel>Category</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
@@ -95,7 +92,7 @@ export default function StoryForm({ user }) {
                                     onChange={e => setCategory(e.target.value)}
                                 >
                                     {categories.map(c =>
-                                        <MenuItem key= {c.id} value={c.id}>{c.title}</MenuItem>
+                                        <MenuItem key={c.id} value={c.id}>{c.title}</MenuItem>
                                     )}
                                 </Select>
                             </FormControl>
@@ -106,7 +103,7 @@ export default function StoryForm({ user }) {
                         <TextField
                             placeholder="Tell your story..."
                             helperText="Please enter your story title"
-                            value={story.body} 
+                            value={story.body}
                             onChange={e => { setStory({ ...story, body: e.target.value }) }}
                             multiline
                             rows={13}
@@ -118,5 +115,6 @@ export default function StoryForm({ user }) {
                 </div>
             </div>
         </form>
+        
     )
 }

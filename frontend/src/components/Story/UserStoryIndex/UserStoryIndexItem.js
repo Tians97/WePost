@@ -1,10 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { deleteStory } from '../../../store/stories'
 import { useDispatch } from 'react-redux'
+import defaultImage from '../StoryIndex/default.png'
 
 export default function UserStoryIndexItem({ story }) {
     const dispatch = useDispatch()
+    const history = useHistory()
     return (
         <>
             <div className='user-story-index-item-container'>
@@ -17,11 +19,11 @@ export default function UserStoryIndexItem({ story }) {
                     </div>
                 </Link>
                 <div className='story-image'>
-                    <img className='story-img' src={`${story.photoUrl}`} />
+                    <img className='story-img' src={story.photoUrl ? story.photoUrl : defaultImage} />
                 </div>
             </div>
             <div className='edit-button'>
-                <a className='edit-update'>Update</a>
+                <a className='edit-update' onClick={()=>history.push(`/stories/${story.id}/edit`) }>Update</a>
                 <a className='edit-delete' onClick={() => { dispatch(deleteStory(story.id))}}>Delete</a>
             </div>
         </>

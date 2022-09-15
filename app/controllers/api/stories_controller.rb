@@ -14,7 +14,8 @@ class Api::StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    if @story.save
+    @story.author_id = current_user.id
+    if @story.save!
       render :show
     else
       render json: @story.errors.full_messages, status: 422
