@@ -18,7 +18,7 @@ export default function EditStoryForm() {
     const history = useHistory()
     const categories = useSelector(getCategories)
     let storyData = useSelector(getStory(storyId))
-    // console.log(storyData)
+    console.log(storyData)
 
     const categoryContent = {
         1: "Fitness",
@@ -33,7 +33,8 @@ export default function EditStoryForm() {
 
     const [story, setStory] = useState(storyData)
     const [category, setCategory] = useState(story.categoryId);
-    const [image, setImage] = useState()
+    const [newImage, setNewImage] = useState()
+    const [newFile, setNewFile] = useState()
 
     // console.log(category)
 
@@ -50,10 +51,18 @@ export default function EditStoryForm() {
         formData.append('story[title]', story.title);
         formData.append('story[body]', story.body);
         formData.append('story[categoryId]', category)
-        formData.append('story[photo]', image)
-
+        if(newImage){
+            formData.append('story[photo]', newImage)
+        }
+        // formData.append('story[photo]', image)
         dispatch(updateStory(formData, storyId))
         history.push(`/stories/${storyId}`)
+    }
+
+    function handleChange(e) {
+        console.log(e.target.files);
+        setNewImage(e.target.files[0]);
+        setNewFile(URL.createObjectURL(e.target.files[0]))
     }
 
     return (
@@ -65,8 +74,13 @@ export default function EditStoryForm() {
 
 
                 <div className='upload-box'>
-                    <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+                    <input type="file" onChange={handleChange} />
                 </div>
+                <br />
+                <div>
+                    <img className="preview-image" src={newFile ? newFile : story.photoUrl}/>
+                </div>
+                <br/>
                 <div className='story-form-input'>
                     <div className='story-form-title'>
                         {/* <input id='story-form-title' placeholder='Title' value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }}></input> */}
@@ -78,7 +92,7 @@ export default function EditStoryForm() {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField style={{ width: '100%' }} id="standard-basic" helperText="Please enter your story title" label="Title" variant="standard" value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }} />
+                            <TextField required style={{ width: '100%' }} id="standard-basic" helperText="Please enter your story title" label="Title" variant="standard" value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }} />
                         </Box>
                         <br /><br />
                         <Box sx={{ minWidth: 120 }}>
@@ -100,7 +114,7 @@ export default function EditStoryForm() {
                     </div>
                     <br /><br />
                     <div className='story-form-body'>
-                        <TextField
+                        <TextField required
                             placeholder="Tell your story..."
                             helperText="Please enter your story title"
                             value={story.body}

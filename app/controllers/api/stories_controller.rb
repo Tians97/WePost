@@ -30,6 +30,7 @@ class Api::StoriesController < ApplicationController
   def update
     @story = Story.find(params[:id])
     if @story.author_id == current_user.id
+      # debugger
       if @story.update(story_params)
         render :show
         return

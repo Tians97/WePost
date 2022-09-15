@@ -32,7 +32,10 @@ export default function StoryForm({ user }) {
         
     const [story, setStory] = useState(storyData)
     const [category, setCategory] = useState("");
-    const [image, setImage] = useState([])
+    const [image, setImage] = useState()
+    const [file, setFile] = useState()
+
+    console.log(image)
 
 
 
@@ -50,14 +53,25 @@ export default function StoryForm({ user }) {
         formData.append('story[title]', story.title);
         formData.append('story[body]', story.body);
         formData.append('story[categoryId]', category)
-        formData.append('story[photo]', image)
+        formData.append('story[photo]', file)
 
-        dispatch(createStory(formData))
-        history.push('/')
+        if (errors ){
+            errors.current.reportValidity()
+        }else{
+            dispatch(createStory(formData))
+            history.push('/')
+        }
+    }
+
+    function handleChange(e) {
+        // console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+        setImage(e.target.files[0])
     }
 
 
 
+    let errors = {}
 
     return (
         <form>
@@ -68,7 +82,10 @@ export default function StoryForm({ user }) {
 
                 
                 <div className='upload-box'>
-                    <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+                    <input type="file" onChange={handleChange}  />
+                </div>
+                <div>
+                    <img className="preview-image" src={file}/>
                 </div>
                 <div className='story-form-input'>
                     <div className='story-form-title'>
@@ -81,7 +98,7 @@ export default function StoryForm({ user }) {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField id="standard-basic" helperText="Please enter your story title" label="Title" variant="standard" value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }} />
+                            <TextField required inputRef={errors} helperText="Please enter your story title" label="Title" variant="standard" value={story.title} onChange={e => { setStory({ ...story, title: e.target.value }) }} />
                         </Box>
                         <br /><br />
                         <Box sx={{ minWidth: 120 }}>
@@ -104,6 +121,7 @@ export default function StoryForm({ user }) {
                     <br /><br />
                     <div className='story-form-body'>
                         <TextField
+                            required inputRef={errors}
                             placeholder="Tell your story..."
                             helperText="Please enter your story title"
                             value={story.body} 
