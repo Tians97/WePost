@@ -1,4 +1,3 @@
-import { dispatch } from "d3";
 import csrfFetch from "./csrf";
 
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
