@@ -10,7 +10,7 @@ import StoryShow from "./components/Story/StoryShow/StoryShow";
 import UserStoryIndex from "./components/Story/UserStoryIndex";
 import StoryForm from "./components/Story/StoryForm/StoryForm";
 import EditStoryForm from "./components/Story/StoryForm/EditStoryForm";
-import Bookmark from "./components/BookMark/Bookmark";
+// import Bookmark from "./components/BookMark/Bookmark";
 import WelcomeStoryShow from "./components/Story/StoryShow/WelcomeStoryShow";
 
 function App() {
@@ -45,10 +45,10 @@ function App() {
             <UserPage user={sessionUser} />
             <EditStoryForm/>
           </Route>
-          <Route exact path="/users/:userId/bookmarks">
+          {/* <Route exact path="/users/:userId/bookmarks">
             <UserPage user={sessionUser} />
             <Bookmark/>
-          </Route>
+          </Route> */}
           
           <Route path="/users/:userId/stories">
             <UserPage user={sessionUser} />
