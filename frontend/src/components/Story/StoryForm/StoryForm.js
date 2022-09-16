@@ -32,7 +32,7 @@ export default function StoryForm({ user }) {
         
     const [story, setStory] = useState(storyData)
     const [category, setCategory] = useState("");
-    const [image, setImage] = useState()
+    const [image, setImage] = useState([])
     const [file, setFile] = useState()
 
 
@@ -53,6 +53,16 @@ export default function StoryForm({ user }) {
         formData.append('story[body]', story.body);
         formData.append('story[categoryId]', category)
         formData.append('story[photo]', image)
+<<<<<<< HEAD
+=======
+
+        // if (errors){
+        //     errors.current.reportValidity()
+        // }else{
+            dispatch(createStory(formData))
+            history.push('/')
+        // }
+>>>>>>> bookmark
     }
 
     function handleChange(e) {

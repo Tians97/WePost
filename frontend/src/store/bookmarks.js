@@ -24,12 +24,12 @@ const removeBookmark = bookmarkId => ({
 
 //selectors
 
-export const getBookmarks = state => {
-    if (!state.bookmarks) {
-        return []
-    }
-    return Object.values(state.bookmarks)
-}
+// export const getBookmarks = state => {
+//     if (!state.bookmarks) {
+//         return []
+//     }
+//     return Object.values(state.bookmarks)
+// }
 
 export const getUserBookmarks = state => {
     if (!state.bookmarks) {
@@ -45,21 +45,20 @@ export const getBookmark = storyId => state => {
         return null
     } else {
         const arr = Object.values(state.bookmarks)
+        // return arr
         for (let index = 0; index < arr.length; index++) {
             const element = arr[index];
             if(element.storyId == storyId){
                 return element
             }
-            return null
         }
+        return null
     }
 }
 
-
-
 //thunks
 
-export const fetchBookmarks = () => async dispatch => {
+export const fetchUserBookmarks = () => async dispatch => {
     const response = await csrfFetch('/api/bookmarks')
     if (response.ok) {
         const bookmarks = await response.json()
