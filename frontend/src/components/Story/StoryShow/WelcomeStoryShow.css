@@ -1,0 +1,91 @@
+.story-show-container {
+    width: 60%;
+    padding: 50px;
+    position: relative;
+    left: 140px;
+}
+
+.story-show-header {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.story-show-information {
+    display: flex;
+}
+
+.author-information {
+    list-style: none;
+    padding: 10px
+}
+
+.user-icon {
+    position: relative !important;
+    z-index: 0;
+}
+
+.author {
+    font-size: large;
+    padding-bottom: 5px;
+}
+
+#date-reading-time {
+    color: gray
+}
+
+.story-show-link-bottom {
+    display: flex;
+    list-style: none;
+    padding: 15px
+}
+
+
+.story-show-link-bottom li {
+    margin-left: 15px;
+    color: gray;
+    cursor: pointer;
+}
+
+.story-show-title {
+    font-weight: bold;
+    font-size: xx-large;
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+.story-show-image {
+    width: auto;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.story-show-body {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 30px;
+}
+
+.story-show-body::first-letter {
+    color: black;
+    border-radius: 2px;
+    font-size: 400%;
+    padding-top: 20px;
+    margin-right: 6px;
+    float: left;
+}
+
+.story-show-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.story-show-footer-left a {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.story-show-footer-right a {
+    margin-right: 30px;
+    cursor: pointer;
+}

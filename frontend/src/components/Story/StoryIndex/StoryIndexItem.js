@@ -1,19 +1,42 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import TurnedInIcon from '@mui/icons-material/TurnedIn';
+import TurnedInNotOutlinedIcon from '@mui/icons-material/TurnedInNotOutlined';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import dateFormat from "dateformat";
 import { readingTime } from 'reading-time-estimator'
 import {Avatar} from 'evergreen-ui'
 import "./StoryIndexItem.css"
 import defaultImage from  "./default.png" 
+import { createBookmark, deleteBookmark, fetchUserBookmarks, getBookmark} from '../../../store/bookmarks';
 
 
 export default function StoryIndexItem({story}) {
+    const dispatch = useDispatch()
     const text = story.body
     const result = readingTime(text,100)
-    console.log(story.photoUrl)
+    const sessionUser = useSelector((state) => state.session.user);
+    const bookmark = useSelector(getBookmark(story.id))
+    console.log(bookmark)
+    console.log(story.id)
+    
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (bookmark) {
+            dispatch(deleteBookmark(bookmark.id))
+        } else {
+            dispatch(createBookmark({ userId: sessionUser.id, storyId: story.id }))
+        }
+    };
+
+    // useEffect(()=> {
+    //     dispatch(fetchUserBookmarks())
+    // },[])
+
     return (
             <div className='story-container'>
                 <div className='story-word'>
@@ -42,7 +65,7 @@ export default function StoryIndexItem({story}) {
                         </div>
                         <div className='story-word-bottom-right'>
                             <div className='button-icon'>
-                                <li><BookmarkBorderIcon /></li>
+                                {bookmark ? (<li><TurnedInIcon onClick={handleSubmit} /></li>) : (<li><TurnedInNotOutlinedIcon onClick={handleSubmit} /></li>)}
                                 <li><RemoveCircleOutlineIcon /></li>
                                 <li><MoreHorizIcon /></li>
                             </div>

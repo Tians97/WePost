@@ -43,6 +43,86 @@ require 'open-uri'
         password: 'password'
     )
 
+    user4 = User.create!(
+        username: 'BoBo', 
+        email: 'bo@gege.com', 
+        password: 'password'
+    )
+
+    user5 = User.create!(
+        username: 'Wuwu', 
+        email: 'wuwu@gege.com', 
+        password: 'password'
+    )
+
+    user6 = User.create!(
+        username: 'Jeff', 
+        email: 'jeff@gege.com', 
+        password: 'password'
+    )
+
+    user7 = User.create!(
+        username: 'Caicai', 
+        email: 'caicai@gege.com', 
+        password: 'password'
+    )
+
+    user8 = User.create!(
+        username: 'Lear', 
+        email: 'lear@gege.com', 
+        password: 'password'
+    )
+
+    user9 = User.create!(
+        username: 'Vivi', 
+        email: 'vivi@gege.com', 
+        password: 'password'
+    )
+
+    user10 = User.create!(
+        username: 'Everbright', 
+        email: 'sengseng@gege.com', 
+        password: 'password'
+    )
+
+    user11 = User.create!(
+        username: 'Moriarty', 
+        email: 'liangliang@gege.com', 
+        password: 'password'
+    )
+
+    user12 = User.create!(
+        username: 'Pipi', 
+        email: 'pipi@gege.com', 
+        password: 'password'
+    )
+
+    user13 = User.create!(
+        username: 'Ayako', 
+        email: 'pink@gege.com', 
+        password: 'password'
+    )
+
+    user14 = User.create!(
+        username: 'Ning', 
+        email: 'ningyi@gege.com', 
+        password: 'password'
+    )
+
+    user15 = User.create!(
+        username: 'Kiwi', 
+        email: 'xiaowei@gege.com', 
+        password: 'password'
+    )
+
+    user16 = User.create!(
+        username: 'Lary', 
+        email: 'didi@gege.com', 
+        password: 'password'
+    )
+
+
+
     puts "Creating categories..."
 
     catetory1 = Category.create!(title: "Fitness")
@@ -109,18 +189,36 @@ These are just some of the life-changing lessons I’ve learned from travel. I�
     story3.photo.attach(io: URI.open('https://wepost-seed.s3.us-west-1.amazonaws.com/3.jpeg'), filename: '3.jpeg')
     
 
+
+    story4 = Story.create!(
+        title: "The 6 Secrets Of Older Guys In Great Shape",
+        body: "Fit, slim and healthy guys over 40 are the exception these days, rather than the rule. This has nothing to do with those guys being genetic freaks, or taking secret potions, and everything to do with understanding how their bodies work after 40, and how to consistently do the right things day-in day-out to avoid the: Muscle Loss Fat Gain Low Testosterone and Grumpy Mood so many other guys suffer from at the same age. If you understand these six tactics I’m going to cover, implementing them into your no-doubt busy life, you will be able to: lose the belly and chest fat that annoys and embarrasses you; build some muscle back on those arms and legs; and take back control of your health and body shape to look and feel great as you age. Let’s go…",
+        author_id: 1,
+        category_id: 1,
+        )
+
+    story4.photo.attach(io: URI.open('https://wepost-seed.s3.us-west-1.amazonaws.com/4.jpg'), filename: '4.jpg')
+
+
+    story5 = Story.create!(
+        title: "Making a Purposeful Living with No Real Path:",
+        body: "I need to start with a confession. The story I want to share is self-serving. Dripping with sweat, deeply satisfied, I vividly remember finishing my CrossFit workout, and thinking this is what it’s all about. I felt amazing! That feeling faded fast once I began gathering my things to leave the gym and get to work. I wondered if it was possible to feel as fulfilled as this all day long. I couldn’t imagine that level of satisfaction in my professional life. Was there a way to bring the enjoyment I get from my morning workouts into my career? At that moment, I looked up to see a smile on my coach’s face, beaming with the gratification I longed for, piquing my curiosity to know more about Karen Ward. Standing barely 5 feet tall with a perfectly petite frame, she is our fuel for fitness and the owner of Go Fitness, also known as DFC CrossFit. Her enthusiasm is infectious, spreading quickly into each person who walks in the door. Even after coaching for decades, she gives everyone that smile and her individual attention. With a childlike spirit that defies the booming take-charge tone she takes to keep us in line, she’s still doing it at 65-years-old with a vigor and zest I could only dream of having in my career. How did she land a profession that keeps that joyous gratified smile on her face? I had to know how she did it! I’m thinking she must’ve had a brilliant plan and took all the right steps and figured out the formula to finding career success. I gave her a long list of questions about her personal ambitions, business strategies, work/life balance, and a slew of other secrets I wanted in on, so that maybe I could discover a professional path to bring me the same joy that gives Karen that genuinely satisfied smile.",
+        author_id: 3,
+        category_id: 1,
+        )
+
+    story5.photo.attach(io: URI.open('https://wepost-seed.s3.us-west-1.amazonaws.com/5.jpg'), filename: '5.jpg')
+
+
+
     puts "Creating reivews..."
 
-    review1 = Review.create!(body: "I like your post", author_id: 1, story_id: 1)
-    review2 = Review.create!(body: "Nice Job", author_id: 1, story_id: 2)
-    review3 = Review.create!(body: "I like travel, greate post!", author_id: 1, story_id: 3)
-    review4 = Review.create!(body: "I like your post", author_id: 2, story_id: 1)
-    review5 = Review.create!(body: "I like your post", author_id: 2, story_id: 2)
-    review6 = Review.create!(body: "I like your post", author_id: 2, story_id: 3)
-    review7 = Review.create!(body: "I like your post", author_id: 3, story_id: 1)
-    review8 = Review.create!(body: "I like your post", author_id: 3, story_id: 2)
-    review9 = Review.create!(body: "I like your post", author_id: 3, story_id: 3)
-    review10 = Review.create!(body: "Agree!!!", author_id: 3, story_id: 1)
+    review1 = Review.create!(body: "Helpful ", author_id: 10, story_id: 1)
+    review2 = Review.create!(body: "Consistency is my biggest struggle! Great reminder thanks for this article :)", author_id: 8, story_id: 1)
+    review3 = Review.create!(body: "Good thoughts.", author_id: 1, story_id: 2)
+    review4 = Review.create!(body: "Quite insightful, thank you for sharing Alain!", author_id: 5, story_id: 3)
+    review5 = Review.create!(body: "Great", author_id: 2, story_id: 4)
+    review6 = Review.create!(body: "I appreciate how you're putting this article out there, and I think it's great that you're sharing your knowledge.", author_id: 5, story_id: 4)
 
 
 

@@ -21,6 +21,7 @@ export default function StoryIndex() {
         }
         else {
             dispatch(fetchStories())
+            // dispatch(fetchUserBookmarks())
         }
     },[categoryId, userId])
 

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:index]
     resources :stories, only: [:index, :create, :show, :destroy, :update]
     resources :reviews, only: [:index, :create, :update, :destroy, :show]
+    resources :bookmarks, only: [:create, :destroy, :index, :show]
 
     get "/categories/:category_id", to: "stories#index"
   end

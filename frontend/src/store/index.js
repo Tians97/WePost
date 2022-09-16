@@ -4,12 +4,14 @@ import session from './session'
 import categoriesReducer from './categories';
 import storiesReducer from './stories';
 import reviewsReducer from './reviews';
+import bookmarksReducer from './bookmarks';
 
 const rootReducer = combineReducers({
   session,
   categories:categoriesReducer,
   stories:storiesReducer,
-  reviews:reviewsReducer
+  reviews:reviewsReducer,
+  bookmarks:bookmarksReducer
 });
 
 let enhancer;

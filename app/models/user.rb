@@ -25,6 +25,9 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Review,
     dependent: :destroy
+
+  has_many :bookmarks,
+    dependent: :destroy
   
 
   def self.find_by_credentials(credential, password)

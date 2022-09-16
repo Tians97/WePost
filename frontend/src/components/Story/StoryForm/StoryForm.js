@@ -35,7 +35,6 @@ export default function StoryForm({ user }) {
     const [image, setImage] = useState()
     const [file, setFile] = useState()
 
-    console.log(image)
 
 
 
@@ -53,7 +52,7 @@ export default function StoryForm({ user }) {
         formData.append('story[title]', story.title);
         formData.append('story[body]', story.body);
         formData.append('story[categoryId]', category)
-        formData.append('story[photo]', file)
+        formData.append('story[photo]', image)
 
         if (errors ){
             errors.current.reportValidity()

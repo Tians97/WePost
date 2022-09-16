@@ -19,4 +19,10 @@ class Story < ApplicationRecord
         dependent: :destroy
 
     has_one_attached :photo
+
+    has_many :bookmarks,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Bookmark
+
 end

@@ -10,6 +10,8 @@ import StoryShow from "./components/Story/StoryShow/StoryShow";
 import UserStoryIndex from "./components/Story/UserStoryIndex";
 import StoryForm from "./components/Story/StoryForm/StoryForm";
 import EditStoryForm from "./components/Story/StoryForm/EditStoryForm";
+import Bookmark from "./components/BookMark/Bookmark";
+import WelcomeStoryShow from "./components/Story/StoryShow/WelcomeStoryShow";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
@@ -26,7 +28,7 @@ function App() {
             <CategoryBar />
             <StoryIndex/>
           </Route>
-          <Route path="/categories/:categoryId">
+          <Route exact path="/categories/:categoryId">
             <UserPage user={sessionUser} />
             <CategoryBar />
             <StoryIndex />
@@ -42,6 +44,10 @@ function App() {
           <Route exact path="/stories/:storyId/edit">
             <UserPage user={sessionUser} />
             <EditStoryForm/>
+          </Route>
+          <Route exact path="/users/:userId/bookmarks">
+            <UserPage user={sessionUser} />
+            <Bookmark/>
           </Route>
           
           <Route path="/users/:userId/stories">
@@ -61,6 +67,9 @@ function App() {
           <Route exact path="/">
             <Banner/>
             <StoryIndex/>
+          </Route>
+          <Route exact path="/stories/:storyId">
+            <WelcomeStoryShow />
           </Route>
         </Switch>
       </>
