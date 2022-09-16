@@ -25,7 +25,6 @@ export default function StoryIndexItem({story}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        debugger
         if (bookmark) {
             dispatch(deleteBookmark(bookmark.id))
         } else {

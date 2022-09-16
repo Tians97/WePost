@@ -51,8 +51,8 @@ export const getBookmark = storyId => state => {
             if(element.storyId == storyId){
                 return element
             }
-            return null
         }
+        return null
     }
 }
 
