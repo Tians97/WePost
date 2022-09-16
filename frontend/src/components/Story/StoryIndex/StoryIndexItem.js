@@ -20,12 +20,12 @@ export default function StoryIndexItem({story}) {
     const sessionUser = useSelector((state) => state.session.user);
     const bookmark = useSelector(getBookmark(story.id))
     console.log(bookmark)
-    console.log(story.id)
     
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        debugger
         if (bookmark) {
             dispatch(deleteBookmark(bookmark.id))
         } else {
@@ -33,9 +33,9 @@ export default function StoryIndexItem({story}) {
         }
     };
 
-    // useEffect(()=> {
-    //     dispatch(fetchUserBookmarks())
-    // },[])
+    useEffect(()=> {
+        dispatch(fetchUserBookmarks())
+    },[])
 
     return (
             <div className='story-container'>
@@ -65,6 +65,7 @@ export default function StoryIndexItem({story}) {
                         </div>
                         <div className='story-word-bottom-right'>
                             <div className='button-icon'>
+                                
                                 {bookmark ? (<li><TurnedInIcon onClick={handleSubmit} /></li>) : (<li><TurnedInNotOutlinedIcon onClick={handleSubmit} /></li>)}
                                 <li><RemoveCircleOutlineIcon /></li>
                                 <li><MoreHorizIcon /></li>
