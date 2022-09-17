@@ -45,6 +45,15 @@ export const fetchStories = () => async dispatch => {
     }
 } 
 
+export const fetchQueryStories = (query) => async dispatch => {
+    const res = await csrfFetch(`/api/search/${query}`)
+    if (res.ok) {
+        const stories = await res.json();
+        dispatch(receiveStories(stories))
+    }
+}
+
+
 export const fetchCatStories = (categoryId) => async dispatch =>{
     const response = await csrfFetch(`/api/categories/${categoryId}`)
     // debugger

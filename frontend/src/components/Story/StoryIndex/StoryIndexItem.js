@@ -19,7 +19,6 @@ export default function StoryIndexItem({story}) {
     const result = readingTime(text,100)
     const sessionUser = useSelector((state) => state.session.user);
     const bookmark = useSelector(getBookmark(story.id))
-    console.log(bookmark)
     
 
 

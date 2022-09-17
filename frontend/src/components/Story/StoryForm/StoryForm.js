@@ -53,8 +53,6 @@ export default function StoryForm({ user }) {
         formData.append('story[body]', story.body);
         formData.append('story[categoryId]', category)
         formData.append('story[photo]', image)
-<<<<<<< HEAD
-=======
 
         // if (errors){
         //     errors.current.reportValidity()
@@ -62,7 +60,6 @@ export default function StoryForm({ user }) {
             dispatch(createStory(formData))
             history.push('/')
         // }
->>>>>>> bookmark
     }
 
     function handleChange(e) {

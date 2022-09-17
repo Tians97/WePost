@@ -10,7 +10,8 @@ import StoryShow from "./components/Story/StoryShow/StoryShow";
 import UserStoryIndex from "./components/Story/UserStoryIndex";
 import StoryForm from "./components/Story/StoryForm/StoryForm";
 import EditStoryForm from "./components/Story/StoryForm/EditStoryForm";
-// import Bookmark from "./components/BookMark/Bookmark";
+import SearchBar from "./components/Search/SearchBar";
+import { SearchIndex } from "./components/Search/SearchIndex";
 import WelcomeStoryShow from "./components/Story/StoryShow/WelcomeStoryShow";
 
 function App() {
@@ -25,11 +26,13 @@ function App() {
         <Switch>
           <Route exact path="/">
             <UserPage user={sessionUser} />
+            <SearchBar/>
             <CategoryBar />
             <StoryIndex/>
           </Route>
           <Route exact path="/categories/:categoryId">
             <UserPage user={sessionUser} />
+            <SearchBar/>
             <CategoryBar />
             <StoryIndex />
           </Route>
@@ -45,10 +48,16 @@ function App() {
             <UserPage user={sessionUser} />
             <EditStoryForm/>
           </Route>
-          {/* <Route exact path="/users/:userId/bookmarks">
+          <Route exact path="/users/:userId/bookmarks">
             <UserPage user={sessionUser} />
-            <Bookmark/>
-          </Route> */}
+            {/* <Bookmark/> */}
+          </Route>
+          <Route exact path="/search/:query">
+            <UserPage user={sessionUser} />
+            <SearchBar />
+            <SearchIndex/>
+          </Route>
+
           
           <Route path="/users/:userId/stories">
             <UserPage user={sessionUser} />

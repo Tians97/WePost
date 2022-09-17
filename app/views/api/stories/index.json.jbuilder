@@ -4,5 +4,6 @@
         json.author story.author.username
         json.category story.category.title
         json.photoUrl story.photo.url
+        
     end
 end

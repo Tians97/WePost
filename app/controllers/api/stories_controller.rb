@@ -48,6 +48,17 @@ class Api::StoriesController < ApplicationController
     end
   end
 
+  def search
+    query = params[:query]
+    @stories = Story.where("title ILIKE ? body ILIKE", "%#{query}%", "%#{query}%")
+    if @stories.length > 0
+      render :index
+    else
+      render :index
+    end
+  end
+
+
   private
   
   def story_params

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create, :destroy, :index, :show]
 
     get "/categories/:category_id", to: "stories#index"
+    get '/search/:query' , to: "stories#search"
   end
   
   get '*path', to: "static_pages#frontend_index"
