@@ -1,8 +1,6 @@
 import React from 'react'
 import { SearchInput } from 'evergreen-ui'
-import { fetchQueryStories } from '../../store/stories';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 export default function SearchBar() {
