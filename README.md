@@ -1,4 +1,4 @@
-# WePost | [LIVE](http://openspot-aa.herokuapp.com/)
+# WePost | [LIVE](https://medium-wepost.herokuapp.com/)
 
 WePost is a full-stack Medium clone where users can search, write stories, and write reviews, share with other people
 
