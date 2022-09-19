@@ -13,6 +13,7 @@ import EditStoryForm from "./components/Story/StoryForm/EditStoryForm";
 import SearchBar from "./components/Search/SearchBar";
 import { SearchIndex } from "./components/Search/SearchIndex";
 import WelcomeStoryShow from "./components/Story/StoryShow/WelcomeStoryShow";
+import BookMarkIndex from "./components/BookMark/BooMarkIndex";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
@@ -50,7 +51,7 @@ function App() {
           </Route>
           <Route exact path="/users/:userId/bookmarks">
             <UserPage user={sessionUser} />
-            {/* <Bookmark/> */}
+            <BookMarkIndex/>
           </Route>
           <Route exact path="/search/:query">
             <UserPage user={sessionUser} />
