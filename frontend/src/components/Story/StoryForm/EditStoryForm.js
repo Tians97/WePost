@@ -18,7 +18,7 @@ export default function EditStoryForm() {
     const history = useHistory()
     const categories = useSelector(getCategories)
     let storyData = useSelector(getStory(storyId))
-    console.log(storyData)
+
 
     const categoryContent = {
         1: "Fitness",
@@ -31,12 +31,11 @@ export default function EditStoryForm() {
         8: "Travel"
     }
 
-    const [story, setStory] = useState(storyData)
-    const [category, setCategory] = useState(story.categoryId);
+    const [story, setStory] = useState()
+    const [category, setCategory] = useState();
     const [newImage, setNewImage] = useState()
     const [newFile, setNewFile] = useState()
 
-    // console.log(category)
 
     useEffect(() => {
         if (storyId) {
@@ -44,6 +43,13 @@ export default function EditStoryForm() {
         }
         dispatch(fetchCategories())
     }, [storyId])
+
+    useEffect(() => {
+        if(storyData) {
+            setStory(storyData);
+            setCategory(storyData.categoryId);
+        }
+    },[storyData]);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -60,10 +66,11 @@ export default function EditStoryForm() {
     }
 
     function handleChange(e) {
-        console.log(e.target.files);
         setNewImage(e.target.files[0]);
         setNewFile(URL.createObjectURL(e.target.files[0]))
     }
+
+    if (!story) return null;
 
     return (
         <form>

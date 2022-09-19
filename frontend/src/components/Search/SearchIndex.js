@@ -10,12 +10,11 @@ export function SearchIndex() {
     const { query } = useParams();
     const dispatch = useDispatch();
     const storyData = useSelector(getStories);
-    // console.log(storyData)
-    console.log(query)
+
     
 
     const filterd =  storyData.filter(story=> story.title.toLowerCase().includes(query))
-    console.log(filterd)
+
     
 
     useEffect(() => {

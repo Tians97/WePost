@@ -19,13 +19,13 @@ export default function BookMarkIndex() {
     //     bookmark[story]
     // })
 
-    console.log(stories)
 
     useEffect(() => {
         dispatch(fetchUserBookmarks())
     },[])
 
     return(
+        
         <div className="user-stories-container">
             <div className='user-stories-header'>
                 <h1>Your bookmarks</h1>

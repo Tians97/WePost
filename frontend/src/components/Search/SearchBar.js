@@ -7,7 +7,6 @@ export default function SearchBar() {
 
     const [query, setQuery] = useState("");
     const history = useHistory();
-    console.log(query)
 
 
     const handleSubmit = (e) => {
