@@ -26,16 +26,16 @@ export default function StoryForm({ user }) {
     storyData = {
         title: "",
         body: "",
-        category: null,
+        category: "",
         photo: []
     }
         
     const [story, setStory] = useState(storyData)
     const [category, setCategory] = useState("");
-    const [image, setImage] = useState([])
+    const [image, setImage] = useState(null)
     const [file, setFile] = useState()
 
-
+    let errors = ""
 
 
     useEffect(() => {
@@ -53,13 +53,30 @@ export default function StoryForm({ user }) {
         formData.append('story[body]', story.body);
         formData.append('story[categoryId]', category)
         formData.append('story[photo]', image)
+        
+        if(story.title.length == 0){
+            errors += "title cannot by empty \n"
+        }
 
-        // if (errors){
-        //     errors.current.reportValidity()
-        // }else{
+        if (story.body.length == 0) {
+            errors += "body cannot by empty \n"
+        } 
+
+        if (category.length == 0) {
+            errors += "please select a category\n"
+        }
+
+        if (image === null){
+            errors += "please add a image\n"
+        }
+
+
+        if(errors.length !== 0){
+            window.alert(errors)
+        } else {
             dispatch(createStory(formData))
             history.push('/')
-        // }
+        }
     }
 
     function handleChange(e) {
@@ -68,8 +85,6 @@ export default function StoryForm({ user }) {
     }
 
 
-
-    let errors = {}
 
     return (
         <form>

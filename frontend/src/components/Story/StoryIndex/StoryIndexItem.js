@@ -63,10 +63,9 @@ export default function StoryIndexItem({story}) {
                         </div>
                         <div className='story-word-bottom-right'>
                             <div className='button-icon'>
-                                
-                                {bookmark ? (<li><TurnedInIcon onClick={handleSubmit} /></li>) : (<li><TurnedInNotOutlinedIcon onClick={handleSubmit} /></li>)}
-                                <li><RemoveCircleOutlineIcon /></li>
-                                <li><MoreHorizIcon /></li>
+                                {sessionUser && 
+                                (bookmark ? (<li><TurnedInIcon onClick={handleSubmit} /></li>) : (<li><TurnedInNotOutlinedIcon onClick={handleSubmit} /></li>))
+                                }
                             </div>
                         </div>
                     </div>

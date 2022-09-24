@@ -5,26 +5,34 @@ import { getStory, fetchStory } from '../../../store/stories';
 import dateFormat from "dateformat";
 import { readingTime } from 'reading-time-estimator';
 import { Avatar } from 'evergreen-ui';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkIcon from '@mui/icons-material/Link';
-import BookmarkAddOutlined from '@mui/icons-material/BookmarkAddOutlined';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
 import ReviewIndex from '../../Review/ReviewIndex';
 import './StoryShow.css'
 import {getReviewsByStoryId } from '../../../store/reviews';
 import defaultImage from "../StoryIndex/default.png"
+import { getBookmark, deleteBookmark, createBookmark,  } from '../../../store/bookmarks';
+import TurnedInIcon from '@mui/icons-material/TurnedIn';
+import TurnedInNotOutlinedIcon from '@mui/icons-material/TurnedInNotOutlined';
 
 
 export default function StoryShow() {
     const {storyId} = useParams()
     const dispatch = useDispatch()
     const story = useSelector(getStory(storyId))
-
+    const sessionUser = useSelector((state) => state.session.user);
     const reviews = useSelector(getReviewsByStoryId(storyId))
+
+    const bookmark = useSelector(getBookmark(story.id))
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (bookmark) {
+            dispatch(deleteBookmark(bookmark.id))
+        } else {
+            dispatch(createBookmark({ userId: sessionUser.id, storyId: story.id }))
+        }
+    };
     
 
     useEffect(() => {
@@ -54,14 +62,6 @@ export default function StoryShow() {
                         </li>
                     </div>
                 </div>
-                <div className='story-show-link-bottom'>
-                    <li><TwitterIcon/></li>
-                    <li><FacebookIcon/></li>
-                    <li><LinkedInIcon/></li>
-                    <li><LinkIcon/></li>
-                    <li><BookmarkAddOutlined/></li>
-                    <li><MoreHorizIcon/></li>
-                </div>
             </div>
 
             <div className='story-show-title'>
@@ -76,13 +76,10 @@ export default function StoryShow() {
 
             <div className='story-show-footer'>
                 <div className='story-show-footer-left'>
-                    <a><FavoriteBorderIcon /></a>
                     <a><ReviewIndex reviews={reviews} /></a>
                 </div>
                 <div className='story-show-footer-right'>
-                    <a><IosShareOutlinedIcon /></a>
-                    <a><BookmarkAddOutlined /></a>
-                    <a><MoreHorizIcon /></a>
+                    {bookmark ? (<TurnedInIcon onClick={handleSubmit} />) : (<TurnedInNotOutlinedIcon onClick={handleSubmit} />)}
                 </div>
             </div>
             

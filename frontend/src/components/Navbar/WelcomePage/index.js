@@ -19,9 +19,6 @@ export default function WelcomePage() {
                     </div>
 
                     <div className='navbar-right'>
-                        <h4>Our story</h4>
-                        <h4>Membership</h4>
-                        <h4>Write</h4>
                         <h4><LoginFormModal showLogin = {showLogin} setShowLogin = {setShowLogin} setShowSignup = {setShowSignup}/></h4>
                         <h4 className='get-start'><SignupFormModal showSignup= {showSignup} setShowSignup = {setShowSignup} setShowLogin = {setShowLogin}/></h4>
                     </div>
