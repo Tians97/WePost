@@ -19,26 +19,37 @@ WePost is a full-stack Medium clone where users can search, write stories, and w
 - Users can sign up, log in, and log out of their accounts; they will stay logged in after leaving the page.
 - Error messages are displayed next to the respective fields in the signup form as part of frontend error-handling.
 
+![User](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/user.gif)
+
 
 ### Create Stories
 - The story is viewable by the public
 - After user log in, they can find their own story in the profile, and user can create, edit, and delete story
 
+![Story](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/story.gif)
+
 
 ### Commenting on Stories
 - Only logged in user can leave comments for a story, and they also can delete their comments
+
+![review](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/review.gif)
 
 
 ### Topics/Categories
 - Each story will require to asign a category when they are created
 - User can use category bar to select stories which related to their interested category
 
+![category](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/category.gif)
 
 ### Bookmark
 - User can add their interested story in the bookmark
 - User can also find their bookmarked story in the bookmark section.
-- The bookmark is delectable 
+- The bookmark is delectable.
+
+![bookmark](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/bookmark.gif)
 
 
 ### Search
 - In the search bar, user can search stories by story's title
+
+![search](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/search.gif)
