@@ -22,17 +22,25 @@ WePost is a full-stack Medium clone where users can search, write stories, and w
 ![User](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/user.gif)
 
 
-### Create Stories
+### Stories (Create, Read, Update, Delete)
 - The story is viewable by the public
 - After user log in, they can find their own story in the profile, and user can create, edit, and delete story
 
 ![Story](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/story.gif)
 
 
-### Commenting on Stories
+### Commenting on Stories (Create, Read, Delete)
 - Only logged in user can leave comments for a story, and they also can delete their comments
 
 ![review](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/review.gif)
+
+
+### Bookmark (Create, Read, Delete)
+- User can add their interested story in the bookmark
+- User can also find their bookmarked story in the bookmark section.
+- The bookmark is delectable.
+
+![bookmark](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/bookmark.gif)
 
 
 ### Topics/Categories
@@ -40,13 +48,6 @@ WePost is a full-stack Medium clone where users can search, write stories, and w
 - User can use category bar to select stories which related to their interested category
 
 ![category](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/category.gif)
-
-### Bookmark
-- User can add their interested story in the bookmark
-- User can also find their bookmarked story in the bookmark section.
-- The bookmark is delectable.
-
-![bookmark](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/bookmark.gif)
 
 
 ### Search
