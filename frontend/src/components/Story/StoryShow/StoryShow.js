@@ -49,41 +49,45 @@ export default function StoryShow() {
     
 
     return (
-        <div className='story-show-container'>
-            <div className='story-show-header'>
-                <div className='story-show-information'>
-                    <div className='author-icon'>
-                        <Avatar name={`${story.author}`} size={60} />
+        <>
+            {story && (
+            <div className='story-show-container'>
+                <div className='story-show-header'>
+                    <div className='story-show-information'>
+                        <div className='author-icon'>
+                            <Avatar name={`${story.author}`} size={60} />
+                        </div>
+                        <div className='author-information'>
+                            <li className='author'>{story.author}</li>
+                            <li className='date-reading-time'>
+                                <a id="date-reading-time">{dateFormat(story.updatedAt, "fullDate")} · {result.text} ·</a> <a> Listen</a>
+                            </li>
+                        </div>
                     </div>
-                    <div className='author-information'>
-                        <li className='author'>{story.author}</li>
-                        <li className='date-reading-time'>
-                            <a id="date-reading-time">{dateFormat(story.updatedAt, "fullDate")} · {result.text} ·</a> <a> Listen</a>
-                        </li>
+                </div>
+
+                <div className='story-show-title'>
+                    {story.title}
+                </div>
+
+                <img className='story-show-image' src={story.photoUrl ? story.photoUrl : defaultImage}/>
+
+                <div className='story-show-body'>
+                    {story.body}
+                </div>
+
+                <div className='story-show-footer'>
+                    <div className='story-show-footer-left'>
+                        <a><ReviewIndex reviews={reviews} /></a>
+                    </div>
+                    <div className='story-show-footer-right'>
+                        {bookmark ? (<TurnedInIcon onClick={handleSubmit} />) : (<TurnedInNotOutlinedIcon onClick={handleSubmit} />)}
                     </div>
                 </div>
+                
+                
             </div>
-
-            <div className='story-show-title'>
-                {story.title}
-            </div>
-
-            <img className='story-show-image' src={story.photoUrl ? story.photoUrl : defaultImage}/>
-
-            <div className='story-show-body'>
-                {story.body}
-            </div>
-
-            <div className='story-show-footer'>
-                <div className='story-show-footer-left'>
-                    <a><ReviewIndex reviews={reviews} /></a>
-                </div>
-                <div className='story-show-footer-right'>
-                    {bookmark ? (<TurnedInIcon onClick={handleSubmit} />) : (<TurnedInNotOutlinedIcon onClick={handleSubmit} />)}
-                </div>
-            </div>
-            
-            
-        </div>
+            )}
+        </>
     )
 }

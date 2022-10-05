@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import "./Welcome.css"
 import LoginFormModal from '../LoginFormModal'
 import SignupFormModal from '../SignupFormModal'
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+
 
 
 export default function WelcomePage() {
@@ -16,6 +20,14 @@ export default function WelcomePage() {
                         <Link style={{ textDecoration: 'none', color: "black" }} to="/">
                             <h2><img src="https://seeklogo.com/images/M/medium-logo-F0ACFCCD58-seeklogo.com.png" /> WePost</h2>
                         </Link>
+                    </div>
+
+                    <div>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/tianshuxiao" style={{ textDecoration: 'none', color: "black" }}><LinkedInIcon /></a></li>
+                            <li><a href="https://github.com/Tians97" style={{ textDecoration: 'none', color: "black" }}><GitHubIcon /></a></li>
+                            <li><a href="mailto:tx2@g.ucla.edu" style={{ textDecoration: 'none', color: "black" }}><EmailIcon /></a></li>
+                        </ul>
                     </div>
 
                     <div className='navbar-right'>

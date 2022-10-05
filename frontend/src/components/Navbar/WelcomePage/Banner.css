@@ -1,3 +1,6 @@
+
+
+
 .second-header {
     background-color: paleturquoise;
     display: flex;
@@ -28,4 +31,15 @@
     width: 500px;
     height: 500px;
     padding-right: 10vw
+}
+
+.icons {
+    list-style: none;
+    display: flex;
+}
+
+.icons li {
+    color: black;
+    text-decoration: none;
+    margin-left: 50px;
 }
