@@ -10,6 +10,8 @@ export default function BookMarkIndex() {
 
     const bookmarks = useSelector(getUserBookmarks)
 
+    const sessionUser = useSelector(state => state.session.user)
+
     const stories = []
 
     bookmarks.forEach(bookmark => {
@@ -21,7 +23,9 @@ export default function BookMarkIndex() {
 
 
     useEffect(() => {
-        dispatch(fetchUserBookmarks())
+        if(sessionUser){
+            dispatch(fetchUserBookmarks())
+        }
     },[])
 
     return(
