@@ -3,10 +3,25 @@
     padding-top: 40px;
     padding-bottom: 20px;
     position: relative;
-    left: 20%;
+    left: 30%;
 }
 
-.search-container{
+form input{
+    flex:1;
+    width: 200px;
+}
+
+form button{
+    background: blanchedalmond;
+    border:none;
+    outline:none;
+    padding: 10px, 50px;
+    
+}
+
+
+
+.search-result-container{
     position: relative;
     left:140px
 }

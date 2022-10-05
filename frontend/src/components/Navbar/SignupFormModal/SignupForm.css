@@ -21,18 +21,18 @@
     color: red;
 }
 
-input{
+.modal-input{
     background: transparent;
     border: none;
     border-bottom: 1px solid #000000;
     padding-top:10px;
 }
 
-input[type="text"] {
+.modal-input[type="text"] {
     font-size: 20px;
 }
 
-input[type="password"]{
+.modal-input[type="password"]{
     font-size: 20px;
 }
 

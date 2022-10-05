@@ -84,6 +84,7 @@
 
 .review-delete-button{
     background-color: rgb(228, 10, 10);
-    border-radius: 10%;
     color: white;
+    border:none;
+    outline: none;
 }

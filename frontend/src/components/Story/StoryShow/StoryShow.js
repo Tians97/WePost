@@ -60,7 +60,7 @@ export default function StoryShow() {
                         <div className='author-information'>
                             <li className='author'>{story.author}</li>
                             <li className='date-reading-time'>
-                                <a id="date-reading-time">{dateFormat(story.updatedAt, "fullDate")} · {result.text} ·</a> <a> Listen</a>
+                                <a id="date-reading-time">{dateFormat(story.updatedAt, "fullDate")} · {result.text}</a>
                             </li>
                         </div>
                     </div>

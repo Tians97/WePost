@@ -27,11 +27,6 @@ export default function UserPage({user}) {
                             </NavLink>
                         </div>
                         <div className='icon'>
-                            <NavLink style={{ color: "black" }} to="/">
-                                <NotificationsActiveOutlinedIcon />
-                            </NavLink>
-                        </div>
-                        <div className='icon'>
                             <NavLink style={{ color: "black" }} to={`/users/${user.id}/bookmarks`}>
                                 <BookmarksOutlinedIcon />
                             </NavLink>

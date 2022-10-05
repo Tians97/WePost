@@ -55,6 +55,7 @@ function SignupForm({ setShowSignup, setShowLogin }) {
               Email
               <br /><br />
               <input
+                className="modal-input"
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -68,6 +69,7 @@ function SignupForm({ setShowSignup, setShowLogin }) {
               Username
               <br /><br />
               <input
+                className="modal-input"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -81,6 +83,7 @@ function SignupForm({ setShowSignup, setShowLogin }) {
               Password
               <br /><br />
               <input
+                className="modal-input"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -94,6 +97,7 @@ function SignupForm({ setShowSignup, setShowLogin }) {
               Confirm Password
               <br /><br />
               <input
+                className="modal-input"
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}

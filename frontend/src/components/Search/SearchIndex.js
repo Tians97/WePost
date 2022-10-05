@@ -28,7 +28,7 @@ export function SearchIndex() {
 
     return (
         <>
-            <div className="search-container">
+            <div className="search-result-container">
                 <h1 className="search-header">Search Results:</h1>
             </div>
             <div className='index-item'>

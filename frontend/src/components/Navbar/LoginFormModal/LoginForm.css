@@ -21,7 +21,7 @@
     color:red;
 }
 
-input{
+.modal-input{
     background: transparent;
     border: none;
     border-bottom: .5px solid #a8a8a8;

@@ -16,8 +16,12 @@ export default function SearchBar() {
 
     return (
         <div className='search'>
-            <form onSubmit={handleSubmit}>
-                <SearchInput placeholder='Search Story Title' value={query} onChange={(e) => setQuery(e.target.value)}/>
+            {/* <form onSubmit={handleSubmit}>
+                <SearchInput placeholder='Search Story Title' value={query} onChange={(e) => setQuery(e.target.value)} />
+            </form> */}
+            <form>
+                <input className='search-bar' type="text" placeholder='Search Story Title' value={query} onChange={(e) => setQuery(e.target.value)} />
+                <button onClick={handleSubmit}>Search</button>
             </form>
         </div>
     )

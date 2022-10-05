@@ -51,6 +51,7 @@ function LoginForm({setShowLogin, setShowSignup}) {
               Username or Email
               <br /><br />
               <input
+                className="modal-input"
                 type="text"
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
@@ -64,6 +65,7 @@ function LoginForm({setShowLogin, setShowSignup}) {
               Password
               <br /><br />
               <input
+                className="modal-input"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
