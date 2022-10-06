@@ -57,7 +57,7 @@ export default function StoryShow() {
     // if(!story){
     //     return null
     // }
-    console.log(story)
+    // console.log(story)
     const text = story.body
     const result = readingTime(text, 100)
 

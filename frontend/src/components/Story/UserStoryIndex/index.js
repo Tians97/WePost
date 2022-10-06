@@ -10,7 +10,7 @@ export default function UserStoryIndex() {
   const {userId} = useParams()
   const dispatch = useDispatch()
   const stories = useSelector(getStories)
-  console.log(stories.reverse())
+  // console.log(stories.reverse())
   useEffect(() => {
     dispatch(fetchUserStories(userId))
   },[userId])
