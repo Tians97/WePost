@@ -73,3 +73,7 @@
     cursor: pointer;
 }
 
+.user-stories-index{
+    display: flex;
+    flex-direction: column-reverse;
+}

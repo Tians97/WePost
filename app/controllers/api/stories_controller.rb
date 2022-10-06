@@ -5,7 +5,7 @@ class Api::StoriesController < ApplicationController
       # debugger
       render :index
     elsif params[:user_id]
-      @stories = Story.where(author_id: params[:user_id])
+      @stories = Story.where(author_id: params[:user_id]).order("updated_at DESC")
     else
       @stories = Story.all
       render :index
@@ -23,7 +23,15 @@ class Api::StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
+    id_pram = params[:id]
+    if id_pram.to_i.to_s != id_pram
+      return nil
+    end
+    @story = Story.find(id_pram)
+    if @story.nil?
+      return nil
+    end
+
     render :show
   end
 

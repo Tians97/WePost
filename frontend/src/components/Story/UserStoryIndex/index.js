@@ -10,6 +10,7 @@ export default function UserStoryIndex() {
   const {userId} = useParams()
   const dispatch = useDispatch()
   const stories = useSelector(getStories)
+  console.log(stories.reverse())
   useEffect(() => {
     dispatch(fetchUserStories(userId))
   },[userId])
@@ -21,7 +22,7 @@ export default function UserStoryIndex() {
         <Link className='write-a-story' to="/stories/new_story">Write a story</Link>
       </div>
       <div className='user-stories-index'>
-        {stories.map(story => {
+        {stories.reverse().map(story => {
           return <UserStoryIndexItem key={story.id} story={story} />
         })}
       </div>

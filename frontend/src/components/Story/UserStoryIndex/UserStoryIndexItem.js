@@ -8,7 +8,7 @@ export default function UserStoryIndexItem({ story }) {
     const dispatch = useDispatch()
     const history = useHistory()
     return (
-        <>
+        <div className='user-stories'>
             <div className='user-story-index-item-container'>
                 <Link className='link' to={`/stories/${story.id}`}>
                     <div className='user-story-title'>
@@ -26,6 +26,6 @@ export default function UserStoryIndexItem({ story }) {
                 <a className='edit-update' onClick={()=>history.push(`/stories/${story.id}/edit`) }>Update</a>
                 <a className='edit-delete' onClick={() => { dispatch(deleteStory(story.id))}}>Delete</a>
             </div>
-        </>
+        </div>
     )
 }

@@ -23,22 +23,23 @@ export default function BookMarkIndex() {
 
 
     useEffect(() => {
-        if(sessionUser){
             dispatch(fetchUserBookmarks())
-        }
     },[])
 
     return(
-        
-        <div className="user-stories-container">
-            <div className='user-stories-header'>
-                <h1>Your bookmarks</h1>
-            </div>
-            <div className='user-stories-index'>
-                {stories.map(story => {
-                    return <BookMarkIndexItem key={story.id} story={story} />
-                })}
-            </div>
-        </div>
+        <>
+            {sessionUser && (
+                <div className="user-stories-container">
+                    <div className='user-stories-header'>
+                        <h1>Your bookmarks</h1>
+                    </div>
+                    <div className='user-stories-index'>
+                        {stories.map(story => {
+                            return <BookMarkIndexItem key={story.id} story={story} />
+                        })}
+                    </div>
+                </div>
+            )}
+        </>
     )
 }

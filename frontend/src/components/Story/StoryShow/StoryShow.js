@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Link, useParams, Redirect} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useParams, Redirect, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStory, fetchStory } from '../../../store/stories';
 import dateFormat from "dateformat";
@@ -18,10 +18,15 @@ export default function StoryShow() {
     const {storyId} = useParams()
     const dispatch = useDispatch()
     const story = useSelector(getStory(storyId))
+    // let story = {
+
+    // }
+    // const [story, setStory] = useState(getStory(storyId))
     const sessionUser = useSelector((state) => state.session.user);
     const reviews = useSelector(getReviewsByStoryId(storyId))
 
-    const bookmark = useSelector(getBookmark(story.id))
+    const bookmark = useSelector(getBookmark(storyId))
+    const history = useHistory()
 
 
 
@@ -36,13 +41,23 @@ export default function StoryShow() {
     
 
     useEffect(() => {
-        dispatch(fetchStory(storyId))
+        dispatch(fetchStory(storyId)).catch((e) => history.push("/error"))
     }, [storyId]) 
 
-    if (!story){
+    if(!story){
         return null
     }
 
+    // useEffect(()=>{
+    //     if(!story){
+    //         dispatch(fetchStory(storyId))
+    //         // setStory(getStory(storyId))
+    //     } 
+    // },[])
+    // if(!story){
+    //     return null
+    // }
+    console.log(story)
     const text = story.body
     const result = readingTime(text, 100)
 

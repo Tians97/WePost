@@ -14,6 +14,7 @@ import SearchBar from "./components/Search/SearchBar";
 import { SearchIndex } from "./components/Search/SearchIndex";
 import WelcomeStoryShow from "./components/Story/StoryShow/WelcomeStoryShow";
 import BookMarkIndex from "./components/BookMark/BooMarkIndex";
+import Errors from "./components/Error/Errors";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
@@ -23,50 +24,52 @@ function App() {
   if (sessionUser) {
     sessionLinks = (
       <>
-        
+        <UserPage user={sessionUser} />
         <Switch>
           <Route exact path="/">
-            <UserPage user={sessionUser} />
+            
             <SearchBar/>
             <CategoryBar />
             <StoryIndex/>
           </Route>
           <Route exact path="/categories/:categoryId">
-            <UserPage user={sessionUser} />
             <SearchBar/>
             <CategoryBar />
             <StoryIndex />
           </Route>
           <Route exact path="/stories/new_story">
-            <UserPage user={sessionUser} />
             <StoryForm user={sessionUser}/>
           </Route>
           <Route exact path="/stories/:storyId">
-            <UserPage user={sessionUser} />
             <StoryShow/>
           </Route>
           <Route exact path="/stories/:storyId/edit">
-            <UserPage user={sessionUser} />
             <EditStoryForm/>
           </Route>
           <Route exact path="/users/:userId/bookmarks">
-            <UserPage user={sessionUser} />
             <BookMarkIndex/>
           </Route>
           <Route exact path="/search/:query">
-            <UserPage user={sessionUser} />
             <SearchBar />
             <SearchIndex/>
           </Route>
 
-          
           <Route path="/users/:userId/stories">
-            <UserPage user={sessionUser} />
             <UserStoryIndex />
           </Route>
-          
+
+          <Route path='/error'>
+            <Errors/>
+          </Route>
+
+          <Route path="*">
+            <SearchBar />
+            <CategoryBar />
+            <StoryIndex />
+          </Route>
           
         </Switch>
+        
       </>
     );
   } else {
@@ -80,6 +83,11 @@ function App() {
           </Route>
           <Route exact path="/stories/:storyId">
             <WelcomeStoryShow />
+          </Route>
+          <Route path="*">
+            <UserPage user={sessionUser} />
+            <Banner />
+            <StoryIndex />
           </Route>
         </Switch>
       </>

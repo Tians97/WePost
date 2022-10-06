@@ -28,6 +28,7 @@ export const getStories = state => {
 }
 
 export const getStory = storyId => state => {
+    // debugger
     if (!state) {
         return null
     } else if (!state.stories) {
