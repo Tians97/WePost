@@ -86,3 +86,7 @@
     margin-left: 20px;
     cursor: pointer;
 }
+
+.index-icon{
+    z-index: -1;
+}

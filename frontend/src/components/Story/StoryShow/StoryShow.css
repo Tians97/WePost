@@ -3,6 +3,7 @@
     padding: 50px;
     position: relative;
     left: 140px;
+    z-index: -1;
 }
 
 .story-show-header{
@@ -21,7 +22,7 @@
 
 .user-icon{
     position: relative !important;
-    z-index: 0;
+    z-index: -1;
 }
 
 .author{

@@ -39,7 +39,7 @@ export default function StoryIndexItem({story}) {
             <div className='story-container'>
                 <div className='story-word'>
                     <div className='user-data'>
-                        <a>
+                        <a className='index-icon'>
                         <Avatar className="user-icon" style={{ zIndex: 0}} name={`${story.author}`} size={30} />
                         </a>
                         <a className='author-name'>{story.author}<span className="date"> · {dateFormat(story.updatedAt, "fullDate")}</span></a>
