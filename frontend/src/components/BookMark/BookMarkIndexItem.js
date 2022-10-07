@@ -7,7 +7,7 @@ export default function BookMarkIndexItem({ story }) {
     const dispatch = useDispatch()
     const history = useHistory()
     return (
-        <>
+        <div className='user-stories'>
             <div className='user-story-index-item-container'>
                 <Link className='link' to={`/stories/${story.id}`}>
                     <div className='user-story-title'>
@@ -24,6 +24,6 @@ export default function BookMarkIndexItem({ story }) {
             <div className='edit-button'>
                 <a className='edit-delete' onClick={() => { dispatch(deleteBookmark(story.bookmarkId)) }}>Delete</a>
             </div>
-        </>
+        </div>
     )
 }

@@ -7,6 +7,9 @@ import BookmarksOutlinedIcon from '@mui/icons-material/BookmarksOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import ProfileButton from '../ProfileButton.js';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
 
 
 
@@ -41,6 +44,17 @@ export default function UserPage({user}) {
                         <NavLink style={{ color: "black" }} to="/stories/new_story">
                             <CreateOutlinedIcon />
                         </NavLink>
+                    </div>
+                    <div className='nav-link'>
+                        <div className='icon'>
+                            <a href="https://www.linkedin.com/in/tianshuxiao" style={{ textDecoration: 'none', color: "black" }}><LinkedInIcon /></a>
+                        </div>
+                        <div className='icon'>
+                            <a href="https://github.com/Tians97" style={{ textDecoration: 'none', color: "black" }}><GitHubIcon /></a>
+                        </div>
+                        <div className='icon'>
+                            <a href="mailto:tx2@g.ucla.edu" style={{ textDecoration: 'none', color: "black" }}><EmailIcon /></a>
+                        </div>
                     </div>
                 </div>
                 <div className='profile-button-container'>

@@ -87,4 +87,26 @@
     color: white;
     border:none;
     outline: none;
+    
+}
+
+.review-update-button {
+    background-color: rgb(10, 116, 37);
+    color: white;
+    border: none;
+    outline: none;
+    margin-left: 150px;
+    margin-right: 20px;
+}
+
+.update-review-textarea{
+    width: 300px;
+}
+
+.update-confirm{
+    background-color: rgb(10, 116, 37);
+    color: white;
+    border: none;
+    outline: none;
+    margin-right: 20px;
 }
