@@ -23,7 +23,7 @@ export default function WelcomePage() {
                     </div>
 
                     <div>
-                        <ul class="icons">
+                        <ul className="icons">
                             <li><a href="https://www.linkedin.com/in/tianshuxiao" style={{ textDecoration: 'none', color: "black" }}><LinkedInIcon /></a></li>
                             <li><a href="https://github.com/Tians97" style={{ textDecoration: 'none', color: "black" }}><GitHubIcon /></a></li>
                             <li><a href="mailto:tx2@g.ucla.edu" style={{ textDecoration: 'none', color: "black" }}><EmailIcon /></a></li>

@@ -14,8 +14,6 @@ export default function WelcomeStoryShow() {
     const {storyId} = useParams()
     const dispatch = useDispatch()
     const story = useSelector(getStory(storyId))
-    const [showLogin, setShowLogin] = useState(false)
-    const [showSignup, setShowSignup] = useState(false)
 
     const reviews = useSelector(getReviewsByStoryId(storyId))
     

@@ -32,7 +32,9 @@ export default function StoryIndexItem({story}) {
     };
 
     useEffect(()=> {
-        dispatch(fetchUserBookmarks())
+        if (sessionUser){
+            dispatch(fetchUserBookmarks())
+        }
     },[])
 
     return (
