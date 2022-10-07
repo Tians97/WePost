@@ -3,6 +3,7 @@ import { SearchInput } from 'evergreen-ui'
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
+
 export default function SearchBar() {
 
     const [query, setQuery] = useState("");
