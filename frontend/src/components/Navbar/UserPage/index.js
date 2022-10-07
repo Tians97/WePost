@@ -47,13 +47,13 @@ export default function UserPage({user}) {
                     </div>
                     <div className='nav-link'>
                         <div className='icon'>
-                            <a href="https://www.linkedin.com/in/tianshuxiao" style={{ textDecoration: 'none', color: "black" }}><LinkedInIcon /></a>
+                            <a href="https://www.linkedin.com/in/tianshuxiao" target="_blank" style={{ textDecoration: 'none', color: "black" }}><LinkedInIcon /></a>
                         </div>
                         <div className='icon'>
-                            <a href="https://github.com/Tians97" style={{ textDecoration: 'none', color: "black" }}><GitHubIcon /></a>
+                            <a href="https://github.com/Tians97" target="_blank"  style={{ textDecoration: 'none', color: "black" }}><GitHubIcon /></a>
                         </div>
                         <div className='icon'>
-                            <a href="mailto:tx2@g.ucla.edu" style={{ textDecoration: 'none', color: "black" }}><EmailIcon /></a>
+                            <a href="mailto:tx2@g.ucla.edu" target="_blank"  style={{ textDecoration: 'none', color: "black" }}><EmailIcon /></a>
                         </div>
                     </div>
                 </div>

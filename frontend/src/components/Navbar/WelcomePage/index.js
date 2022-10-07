@@ -24,9 +24,9 @@ export default function WelcomePage() {
 
                     <div>
                         <ul className="icons">
-                            <li><a href="https://www.linkedin.com/in/tianshuxiao" style={{ textDecoration: 'none', color: "black" }}><LinkedInIcon /></a></li>
-                            <li><a href="https://github.com/Tians97" style={{ textDecoration: 'none', color: "black" }}><GitHubIcon /></a></li>
-                            <li><a href="mailto:tx2@g.ucla.edu" style={{ textDecoration: 'none', color: "black" }}><EmailIcon /></a></li>
+                            <li><a href="https://www.linkedin.com/in/tianshuxiao" target="_blank" style={{ textDecoration: 'none', color: "black" }}><LinkedInIcon /></a></li>
+                            <li><a href="https://github.com/Tians97" target="_blank"  style={{ textDecoration: 'none', color: "black" }}><GitHubIcon /></a></li>
+                            <li><a href="mailto:tx2@g.ucla.edu" target="_blank" style={{ textDecoration: 'none', color: "black" }}><EmailIcon /></a></li>
                         </ul>
                     </div>
 
