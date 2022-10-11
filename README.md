@@ -57,7 +57,7 @@ function handleSubmit(e) {
 ![Story](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/story.gif)
 
 
-### Commenting on Stories (Create, Read, Delete)
+### Commenting on Stories (Create, Read, Update, Delete)
 - Only logged in user can leave comments for a story, and they also can delete their comments
 
 ![review](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/review.gif)
