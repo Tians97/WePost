@@ -58,9 +58,28 @@ function handleSubmit(e) {
 
 
 ### Commenting on Stories (Create, Read, Update, Delete)
-- Only logged in user can leave comments for a story, and they also can delete their comments
+- Only logged in user can leave comments for a story, and they also can update and delete their comments
 
-![review](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/review.gif)
+```javascript
+// edit comment
+const handleEditButton = (e) => {
+        e.preventDefault();
+        setShowEditButton(false);
+        setShowForm(true);
+    };
+const handleSubmit = (e) => {
+        e.preventDefault();
+        updatedReview = { ...updatedReview, body };
+        if (body.trim().length >= 1) {
+            dispatch(updateReview(updatedReview));
+        } else {
+            setBody(updatedReview.body);
+        }
+        setShowForm(false);
+        setShowEditButton(true);
+    };
+```
+![review](https://github.com/Tians97/WePost/blob/e412a8464a4116f924a8718c3d6fa2ba230469c6/gif/review.gif)
 
 
 ### Bookmark (Create, Read, Delete)
