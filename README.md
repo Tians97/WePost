@@ -26,6 +26,34 @@ WePost is a full-stack Medium clone where users can search, write stories, and w
 - The story is viewable by the public
 - After user log in, they can find their own story in the profile, and user can create, edit, and delete story
 
+```javascript
+// story create form submit
+function handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('story[title]', story.title);
+        formData.append('story[body]', story.body);
+        formData.append('story[categoryId]', category)
+        formData.append('story[photo]', image)
+    }
+```
+
+```javascript
+// story edit form submit
+function handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('story[title]', story.title);
+        formData.append('story[body]', story.body);
+        formData.append('story[categoryId]', category)
+        if(newImage){
+            formData.append('story[photo]', newImage)
+        }
+        dispatch(updateStory(formData, storyId))
+        history.push(`/stories/${storyId}`)
+    }
+```
+
 ![Story](https://github.com/Tians97/WePost/blob/5a25d423a421698ceb365f3d7bfd63cdc123c7ef/gif/story.gif)
 
 
