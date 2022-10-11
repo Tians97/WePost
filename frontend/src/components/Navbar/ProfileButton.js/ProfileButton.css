@@ -5,6 +5,7 @@
     transform: translateY(-120%) translateX(5%);
     background: white;
     border: 1px solid #e6e6e6;
+    z-index: 10000000;
 }
 
 .menu-item{
